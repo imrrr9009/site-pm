@@ -12,7 +12,7 @@ Er zijn duizenden webdesigners in Nederland. Je wint niet op "mooie websites" (d
 > Made for More bouwt professionele websites voor ondernemers die online net zo sterk willen overkomen als in het echt, en die standaard vindbaar zijn in Google **én** AI-zoekmachines.
 
 **Je onderscheidende punten (USP's)**
-1. **SEO + GEO standaard inbegrepen.** De meeste concurrenten doen nog niets met AI-vindbaarheid. Dit is je grootste voorsprong. Gebruik het in elk gesprek.
+1. **SEO + GEO standaard inbegrepen, en gemeten.** Veel concurrenten doen nog weinig met AI-vindbaarheid. Beloof wat je kunt laten zien (een Lighthouse-rapport, schema.org, snelheid) en **nooit** een positie in Google of een vermelding in ChatGPT. Juist die eerlijkheid onderscheidt je van bureaus die "nummer 1 in Google" beloven.
 2. **Identiteit + website onder één dak.** Veel ondernemers hebben (net als jij nu) geen goed logo. Jij lost dat in één traject op.
 3. **Vaste prijs, eigenaarschap, geen lock-in.** Dat neemt de grootste angst bij kopers weg.
 4. **Eén persoonlijk aanspreekpunt.**

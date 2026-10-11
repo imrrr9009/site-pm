@@ -68,7 +68,7 @@ Andere hosts (Cloudflare Pages, Vercel, GitHub Pages) werken ook. Het formulier 
 - [ ] **Privacyverklaring** laten controleren en KvK-nummer en adres invullen.
 - [ ] **Footer**: KvK-nummer en btw-id toevoegen zodra je ingeschreven bent (wettelijk verplicht op een zakelijke website).
 - [ ] **Schema.org** (`ORG` in `build.py`): `telephone`, `address`, `vatID` en `sameAs` (LinkedIn, Instagram, Google Bedrijfsprofiel) toevoegen.
-- [ ] **Google Search Console** en **Bing Webmaster Tools**: site verifiëren en `sitemap.xml` indienen. Bing is belangrijk voor GEO, omdat ChatGPT Search mede op Bing leunt.
+- [ ] **Google Search Console** en **Bing Webmaster Tools**: site verifiëren en `sitemap.xml` indienen. Bing voedt onder meer Microsoft Copilot en wordt door meerdere AI-zoekdiensten gebruikt.
 - [ ] **Statistieken**: een cookieloze tool kiezen (bijv. Plausible, Umami of Simple Analytics) en het script toevoegen. Dan is geen cookiebanner nodig.
 - [ ] **Google Bedrijfsprofiel** aanmaken.
 - [ ] Testen met PageSpeed Insights, de Rich Results Test en de Schema Markup Validator.
@@ -85,7 +85,22 @@ Andere hosts (Cloudflare Pages, Vercel, GitHub Pages) werken ook. Het formulier 
 | `robots.txt` met AI-crawlers (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended…) | `site/robots.txt` |
 | `llms.txt` met feitelijke bedrijfssamenvatting | `site/llms.txt` |
 | XML-sitemap met `lastmod` | `site/sitemap.xml` |
-| Snel: geen framework, `defer`-script, font-preconnect, geen layout shift | overal |
+| Snel: geen framework, `defer`-script, zelf gehoste lettertypes met preload, geen layout shift | overal |
 | Toegankelijk: skip-link, zichtbare focus, labels, aria, contrast ≥ 4,5:1, `prefers-reduced-motion` | overal |
+
+### Gemeten resultaat (Google Lighthouse 12.6, lokaal, 11 oktober 2026)
+
+| | Prestaties | Toegankelijkheid | Best practices | SEO |
+|---|---|---|---|---|
+| Mobiel (alle 10 hoofdpagina's) | 98–99 | 100 | 100 | 100 |
+| Desktop (alle 10 hoofdpagina's) | 100 | 100 | 100 | 100 |
+
+LCP mobiel 2,0–2,3 s (gesimuleerd 4G), CLS 0. Meet na livegang opnieuw met [PageSpeed Insights](https://pagespeed.web.dev/): echte hosting kan iets afwijken.
+
+### Wat we wel en niet beloven
+
+- **Wel (zelf te leveren en te meten):** technische SEO, gestructureerde data, snelheid, toegankelijkheid, duidelijke en citeerbare content, sitemap/robots/llms.txt, en een Lighthouse-meting bij oplevering.
+- **Niet (niemand kan dit garanderen):** een positie in Google, of een vermelding door ChatGPT, Perplexity of andere AI. Die hangen af van concurrentie, tijd, reviews en vermeldingen op andere sites.
+- **Alleen met extra hulpmiddelen:** zoekvolumes, posities volgen en backlinks. Daarvoor zijn accounts nodig (Google Search Console van de klant, of een dataleverancier zoals DataForSEO, Semrush of Ahrefs).
 
 Eerlijke kanttekeningen: Google toont FAQ-rich-results sinds 2023 vrijwel alleen nog voor overheids- en zorgsites. De FAQ-markup helpt wel bij het begrip door zoekmachines en AI. `llms.txt` is een voorstel en nog geen officiële standaard. Het kost niets en kan geen kwaad.

@@ -273,9 +273,8 @@ def render(path, title, desc, body, active=None, ld=None, robots="index, follow,
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
 <script src="/assets/js/main.js" defer></script>
 
@@ -304,12 +303,14 @@ FAQ_HOME = [
      "Een professionele bedrijfswebsite begint bij €1.495 (excl. btw) voor het Start-pakket tot 5 pagina's. Het populaire Groei-pakket met teksten, uitgebreide SEO en GEO kost €2.950. Voor maatwerk, webshops of een complete merkidentiteit maken we een offerte vanaf €5.500. Je krijgt altijd vooraf een vaste prijs."),
     ("Hoe lang duurt het voordat mijn website live staat?",
      "Een Start-website staat gemiddeld binnen 3 weken live, een Groei-website binnen 4 tot 6 weken. De planning hangt vooral af van hoe snel teksten, beeld en feedback beschikbaar zijn. Je krijgt bij de start een planning met vaste momenten."),
+    ("Garanderen jullie een hoge positie in Google of een vermelding in ChatGPT?",
+     "Nee, en dat kan niemand eerlijk beloven. Google en AI-zoekmachines bepalen zelf wie ze tonen. Wat wij wel beloven: een technisch sterke, snelle website met duidelijke content en gestructureerde gegevens, gemeten met Google Lighthouse vóór oplevering. Daarmee heb je de beste uitgangspositie. Posities en vermeldingen bouwen zich daarna in maanden op, vooral met goede content, reviews en vermeldingen op andere websites."),
     ("Wat is het verschil tussen SEO en GEO?",
      "SEO (zoekmachineoptimalisatie) zorgt dat je hoog in de gewone zoekresultaten van Google en Bing verschijnt. GEO (Generative Engine Optimization) zorgt dat AI-zoekmachines zoals ChatGPT, Perplexity, Gemini en Google AI Overviews je bedrijf begrijpen, vertrouwen en noemen in hun antwoorden. Wij bouwen elke website voor allebei."),
     ("Ik heb nog geen logo of huisstijl. Kunnen jullie daarbij helpen?",
      "Ja. Veel ondernemers starten bij ons zonder logo. In het traject Logo &amp; merkidentiteit ontwikkelen we je logo, kleuren, lettertypes en tone of voice, zodat je website, social media en drukwerk één herkenbaar geheel vormen."),
     ("Kan ik de website daarna zelf aanpassen?",
-     "Ja. Vanaf het Groei-pakket krijg je een gebruiksvriendelijk beheersysteem waarmee je zelf teksten, foto's en blogartikelen aanpast. Liever niets zelf doen? Dan regelen wij het via een onderhoudsabonnement."),
+     "Onze websites zijn snelle, statische sites zonder beheersysteem. Aanpassingen doen wij voor je, bijvoorbeeld binnen een onderhoudsabonnement. Wil je zelf teksten kunnen wijzigen? Bespreek het in de kennismaking, dan kijken we samen welke oplossing past."),
     ("Is de website na oplevering van mij?",
      "Ja. Na betaling ben jij eigenaar van je website, je domeinnaam en je content. Je zit nergens aan vast: je kunt altijd overstappen naar een andere partij."),
 ]
@@ -321,10 +322,10 @@ def build_home():
     services = [
         ("layout", "Webdesign op maat", "Een website die past bij jouw bedrijf, niet bij een template. Strak ontworpen, supersnel en gebouwd om bezoekers klant te maken.", "/diensten/#webdesign"),
         ("palette", "Logo &amp; merkidentiteit", "Nog geen logo? Wij ontwikkelen je visuele identiteit: logo, kleuren, typografie en tone of voice.", "/diensten/#merkidentiteit"),
-        ("search", "SEO", "Gevonden worden door klanten die nú zoeken. Technische SEO, zoekwoordenonderzoek en lokale vindbaarheid.", "/diensten/#seo"),
-        ("sparkles", "GEO &amp; AI-vindbaarheid", "Genoemd worden in ChatGPT, Perplexity en Google AI Overviews. Wij structureren je site zodat AI je begrijpt én citeert.", "/diensten/#geo"),
+        ("search", "SEO", "Een technisch sterke site met een heldere structuur en pagina's rond de vragen die jouw klanten echt stellen.", "/diensten/#seo"),
+        ("sparkles", "GEO &amp; AI-vindbaarheid", "Je site zo opbouwen dat ChatGPT, Perplexity en Google AI je bedrijf goed kunnen lezen, begrijpen en citeren.", "/diensten/#geo"),
         ("pen", "Teksten die verkopen", "Heldere, overtuigende webteksten in jouw tone of voice — geschreven voor mensen én zoekmachines.", "/diensten/#teksten"),
-        ("shield", "Hosting &amp; onderhoud", "Veilig, snel en altijd up-to-date. Wij houden je site in topconditie, jij focust op je bedrijf.", "/diensten/#onderhoud"),
+        ("shield", "Hosting &amp; onderhoud", "Veilig, snel en actueel. Wij houden je site bij, jij focust op je bedrijf.", "/diensten/#onderhoud"),
     ]
     svc = "".join(
         f'<article class="card card--link reveal" data-delay="{i*60}"><div class="card__icon">{I[k]}</div>'
@@ -338,7 +339,7 @@ def build_home():
     <div>
       <p class="eyebrow">Webdesign &amp; vindbaarheid voor ondernemers</p>
       <h1 id="hero-titel">Een website die laat zien wie je bent. <em>En klanten oplevert.</em></h1>
-      <p class="hero__lead">Made for More bouwt professionele websites voor ondernemers en mkb-bedrijven. Mooi ontworpen, razendsnel en vindbaar in Google én in AI-zoekmachines zoals ChatGPT — zodat jouw bedrijf online net zo sterk overkomt als in het echt.</p>
+      <p class="hero__lead">Made for More bouwt professionele websites voor ondernemers en mkb-bedrijven. Mooi ontworpen, snel en technisch volledig voorbereid op Google én AI-zoekmachines zoals ChatGPT, zodat jouw bedrijf online net zo sterk overkomt als in het echt.</p>
       <div class="btn-row">
         <a class="btn btn--accent" href="/contact/">Plan een gratis kennismaking {ARROW}</a>
         <a class="btn btn--ghost" href="/prijzen/">Bekijk prijzen</a>
@@ -364,8 +365,8 @@ def build_home():
           <div class="sk-cards"><div class="sk-card"></div><div class="sk-card"></div><div class="sk-card"></div></div>
         </div>
       </div>
-      <div class="float-card float-card--search"><div class="float-card__icon">{I["sparkles"]}</div><div><strong>Genoemd door AI</strong><span>ChatGPT · Perplexity · Gemini</span></div></div>
-      <div class="float-card float-card--speed"><div class="float-card__score">90+</div><div><strong>Snel &amp; vindbaar</strong><span>Gebouwd op Core Web Vitals</span></div></div>
+      <div class="float-card float-card--search"><div class="float-card__icon">{I["sparkles"]}</div><div><strong>Leesbaar voor AI</strong><span>Schema.org · llms.txt · FAQ</span></div></div>
+      <div class="float-card float-card--speed"><div class="float-card__score">100</div><div><strong>SEO-score</strong><span>Gemeten met Google Lighthouse</span></div></div>
     </div>
   </div>
 </section>
@@ -387,7 +388,7 @@ def build_home():
     </div>
     <ul class="problem-list">
       <li class="reveal"><span class="problem-list__x">{I["x"]}</span><div><strong>Verouderd of niet van jou</strong><p>Een template die op die van de concurrent lijkt, of een site die al jaren niet is bijgewerkt.</p></div></li>
-      <li class="reveal" data-delay="80"><span class="problem-list__x">{I["x"]}</span><div><strong>Onvindbaar</strong><p>Niet zichtbaar in Google en niet genoemd wanneer klanten ChatGPT om een aanbeveling vragen.</p></div></li>
+      <li class="reveal" data-delay="80"><span class="problem-list__x">{I["x"]}</span><div><strong>Onvindbaar</strong><p>Slecht leesbaar voor Google en AI-assistenten, waardoor klanten je niet tegenkomen.</p></div></li>
       <li class="reveal" data-delay="160"><span class="problem-list__x">{I["x"]}</span><div><strong>Levert niets op</strong><p>Bezoekers komen binnen, maar haken af. Geen duidelijke boodschap, geen heldere volgende stap.</p></div></li>
     </ul>
   </div>
@@ -413,7 +414,7 @@ def build_home():
     </div>
     <div class="grid grid--3">
       <div class="pillar reveal"><div class="pillar__num">+01</div><h3>Meer vertrouwen</h3><p>Een professioneel ontwerp dat jouw identiteit uitstraalt. Bezoekers zien direct wie je bent, wat je doet en waarom ze voor jou moeten kiezen.</p></div>
-      <div class="pillar reveal" data-delay="80"><div class="pillar__num">+02</div><h3>Meer vindbaarheid</h3><p>Technisch perfect, razendsnel en inhoudelijk sterk. Zo vinden klanten je in Google, Google Maps én in de antwoorden van AI-assistenten.</p></div>
+      <div class="pillar reveal" data-delay="80"><div class="pillar__num">+02</div><h3>Meer vindbaarheid</h3><p>Technisch sterk, snel en inhoudelijk duidelijk. Zo leggen we de basis waarmee Google, Google Maps en AI-assistenten je kunnen vinden en begrijpen.</p></div>
       <div class="pillar reveal" data-delay="160"><div class="pillar__num">+03</div><h3>Meer aanvragen</h3><p>Heldere teksten, duidelijke knoppen en een slimme opbouw. Elke pagina heeft één doel: van bezoeker naar klant.</p></div>
     </div>
   </div>
@@ -440,20 +441,20 @@ def build_home():
   <div class="container split">
     <div class="reveal">
       <p class="eyebrow">SEO &amp; GEO</p>
-      <h2 id="geo-titel">Gevonden worden in Google én in ChatGPT.</h2>
-      <p class="lead">Steeds meer mensen stellen hun vraag niet meer aan Google, maar aan een AI-assistent. Die noemt maar een handvol bedrijven. Wij zorgen dat jij daar bij hoort.</p>
+      <h2 id="geo-titel">Klaar voor Google én ChatGPT.</h2>
+      <p class="lead">Steeds meer mensen stellen hun vraag aan een AI-assistent in plaats van aan Google. Die noemt maar een handvol bedrijven. Wij zorgen dat jouw website daar technisch en inhoudelijk klaar voor is.</p>
       <ul class="checklist">
         <li>{I["check"]}<span><strong>Gestructureerde data (schema.org)</strong> zodat zoekmachines en AI precies begrijpen wie je bent, wat je aanbiedt en waar.</span></li>
         <li>{I["check"]}<span><strong>Citeerbare content</strong>: heldere definities, concrete antwoorden en FAQ's die AI-modellen graag overnemen.</span></li>
         <li>{I["check"]}<span><strong>Technische basis</strong>: snelle laadtijden, schone code, toegankelijkheid, sitemap en een AI-vriendelijke robots.txt en llms.txt.</span></li>
-        <li>{I["check"]}<span><strong>Autoriteit &amp; vertrouwen</strong>: Google Bedrijfsprofiel, reviews en vermeldingen die je geloofwaardigheid versterken.</span></li>
+        <li>{I["check"]}<span><strong>Advies over autoriteit</strong>: hoe je je Google Bedrijfsprofiel inricht, reviews verzamelt en vermeld wordt op andere sites.</span></li>
       </ul>
       <a class="link-arrow" href="/kennisbank/wat-is-geo/">Lees: wat is GEO precies? {ARROW}</a>
     </div>
     <div class="reveal" data-delay="100">
       <dl class="definition"><dt>SEO — Search Engine Optimization</dt><dd>Je website zo inrichten dat hij hoog verschijnt in de klassieke zoekresultaten van Google en Bing, voor de zoekwoorden die jouw klanten gebruiken.</dd></dl>
       <dl class="definition"><dt>GEO — Generative Engine Optimization</dt><dd>Je website en online aanwezigheid zo inrichten dat AI-zoekmachines zoals ChatGPT, Perplexity, Gemini en Google AI Overviews jouw bedrijf begrijpen, vertrouwen en noemen in hun antwoorden.</dd></dl>
-      <dl class="definition"><dt>Wat wij doen</dt><dd>Elke Made for More-website wordt standaard gebouwd voor allebei. Zo ben je vindbaar op de manier waarop mensen vandaag zoeken — en morgen.</dd></dl>
+      <dl class="definition"><dt>Wat wij doen</dt><dd>Elke Made for More-website wordt standaard voor allebei gebouwd, en we meten het resultaat vóór oplevering. Een eerste plek in Google of een vermelding door AI kan niemand garanderen. Wel geven we je site de best mogelijke uitgangspositie.</dd></dl>
     </div>
   </div>
 </section>
@@ -511,19 +512,19 @@ PACKAGES = [
     {
         "name": "Start", "price": "€1.495", "unit": "eenmalig", "note": "Excl. btw · live in ±3 weken",
         "desc": "Voor zzp'ers en starters die professioneel online willen staan.",
-        "features": ["Tot 5 pagina's, uniek ontwerp", "Perfect op mobiel, tablet en desktop", "Technische SEO + GEO-basis", "Schema.org-gegevens voor Google &amp; AI", "Contactformulier met spambeveiliging", "Google Bedrijfsprofiel ingericht", "Privacyvriendelijke statistieken"],
+        "features": ["Tot 5 pagina's, uniek ontwerp", "Perfect op mobiel, tablet en desktop", "Technische SEO + GEO-basis", "Schema.org-gegevens voor Google &amp; AI", "Contactformulier met spambeveiliging", "Hulp bij je Google Bedrijfsprofiel", "Lighthouse-meting bij oplevering"],
         "cta": "Start-pakket aanvragen", "featured": False,
     },
     {
         "name": "Groei", "price": "€2.950", "unit": "eenmalig", "note": "Excl. btw · live in 4–6 weken",
         "desc": "Voor ondernemers die serieus willen groeien met hun website.",
-        "features": ["Alles uit Start, plus:", "Tot 10 pagina's", "Teksten geschreven door ons", "Zoekwoorden- en concurrentieonderzoek", "Uitgebreide GEO: FAQ's, kennisbank &amp; llms.txt", "2 SEO-blogartikelen bij de lancering", "Zelf aanpassen via beheersysteem", "Training van 1 uur"],
+        "features": ["Alles uit Start, plus:", "Tot 10 pagina's", "Teksten geschreven door ons", "Analyse van klantvragen en concurrenten", "Uitgebreide GEO: FAQ's, kennisbank &amp; llms.txt", "2 SEO-blogartikelen bij de lancering", "Koppeling met privacyvriendelijke statistieken", "Overdrachtsdocument met alle instellingen"],
         "cta": "Groei-pakket aanvragen", "featured": True,
     },
     {
         "name": "Op maat", "price": "vanaf €5.500", "unit": "", "note": "Excl. btw · planning in overleg",
         "desc": "Voor bedrijven met grotere ambities of specifieke wensen.",
-        "features": ["Alles uit Groei, plus:", "Volledige merkidentiteit &amp; logo", "Onbeperkt aantal pagina's", "Webshop, boekingen of koppelingen", "Meertalige website", "Conversie-optimalisatie &amp; A/B-tests", "Persoonlijke strategiesessies"],
+        "features": ["Alles uit Groei, plus:", "Volledige merkidentiteit &amp; logo", "Onbeperkt aantal pagina's", "Koppelingen met webshop- of boekingssystemen", "Meertalige website", "Conversie-analyse van je belangrijkste pagina's", "Persoonlijke strategiesessies"],
         "cta": "Offerte op maat", "featured": False,
     },
 ]
@@ -551,7 +552,7 @@ def build_diensten():
     blocks = [
         ("webdesign", "layout", "Webdesign &amp; development",
          "Een website die volledig is afgestemd op jouw bedrijf, je klanten en je doelen. Geen standaardtemplate, maar een uniek ontwerp dat jouw identiteit professioneel neerzet en bezoekers omzet in aanvragen.",
-         ["Uniek ontwerp op basis van jouw merk", "Mobile-first: perfect op elk scherm", "Snelle laadtijden en sterke Core Web Vitals", "Toegankelijk volgens WCAG-richtlijnen", "Duidelijke call-to-actions en conversiegerichte opbouw", "Veilig: HTTPS, spambeveiliging en AVG-proof"],
+         ["Uniek ontwerp op basis van jouw merk", "Mobile-first: perfect op elk scherm", "Snelle laadtijden, gemeten met Google Lighthouse", "Gebouwd met de WCAG-richtlijnen voor toegankelijkheid als uitgangspunt", "Duidelijke call-to-actions en conversiegerichte opbouw", "HTTPS, spambeveiliging en privacyvriendelijk ingericht"],
          "Voor wie: zzp'ers, dienstverleners, lokale bedrijven en mkb."),
         ("merkidentiteit", "palette", "Logo &amp; merkidentiteit",
          "Je identiteit is meer dan een logo. Het is hoe mensen je zien, herkennen en onthouden. We ontwikkelen een merk dat klopt met wie je bent — en dat overal consistent terugkomt: op je website, social media, offertes en bedrijfskleding.",
@@ -559,11 +560,11 @@ def build_diensten():
          "Ideaal als je nog geen logo hebt of je huidige uitstraling niet meer past."),
         ("seo", "search", "SEO — vindbaar in Google",
          "Wij zorgen dat je gevonden wordt door mensen die op dit moment zoeken naar wat jij aanbiedt. Dat begint bij een technisch perfecte website en eindigt bij content die écht antwoord geeft op de vragen van je klanten.",
-         ["Zoekwoorden- en concurrentieonderzoek", "Technische SEO: snelheid, structuur, indexatie", "Sterke titels, meta-beschrijvingen en koppen", "Lokale SEO en Google Bedrijfsprofiel", "Interne links en een logische sitestructuur", "Maandelijkse rapportage (bij abonnement)"],
-         "Resultaat: meer relevante bezoekers die klaar zijn om contact op te nemen."),
+         ["Analyse van klantvragen en concurrenten", "Technische SEO: snelheid, structuur, indexeerbaarheid", "Sterke titels, meta-beschrijvingen en koppen", "Lokale SEO en hulp bij je Google Bedrijfsprofiel", "Interne links en een logische sitestructuur", "Sitemap en aanmelding bij Google Search Console en Bing"],
+         "Doel: meer relevante bezoekers. Resultaat in Google bouwt zich op in maanden, niet in dagen."),
         ("geo", "sparkles", "GEO — vindbaar in AI-zoekmachines",
-         "ChatGPT, Perplexity, Gemini, Copilot en Google AI Overviews geven steeds vaker direct antwoord — en noemen daarbij een paar bedrijven. Generative Engine Optimization zorgt dat jouw bedrijf er één van is.",
-         ["Uitgebreide schema.org-gegevens (organisatie, diensten, FAQ)", "Citeerbare content: definities, feiten en duidelijke antwoorden", "Een vaste, consistente bedrijfsomschrijving op het hele web", "AI-crawlers toegestaan via robots.txt en llms.txt", "Kennisbank met expertartikelen (E-E-A-T)", "Vermeldingen op betrouwbare externe platformen"],
+         "ChatGPT, Perplexity, Gemini, Copilot en Google AI Overviews geven steeds vaker direct antwoord — en noemen daarbij een paar bedrijven. Generative Engine Optimization vergroot de kans dat jouw bedrijf er één van is.",
+         ["Uitgebreide schema.org-gegevens (organisatie, diensten, FAQ)", "Citeerbare content: definities, feiten en duidelijke antwoorden", "Een vaste, consistente bedrijfsomschrijving op het hele web", "AI-crawlers toegestaan via robots.txt en llms.txt", "Kennisbank met expertartikelen (E-E-A-T)", "Advies over vermeldingen op betrouwbare externe platformen"],
          "Klaar voor de manier waarop mensen vandaag én morgen zoeken."),
         ("teksten", "pen", "Teksten &amp; content",
          "Goede teksten maken het verschil tussen ‘mooi’ en ‘ik wil contact’. We schrijven heldere, overtuigende webteksten in jouw tone of voice, die prettig lezen én scoren in zoekmachines.",
@@ -571,7 +572,7 @@ def build_diensten():
          "Je hoeft zelf niets te schrijven — alleen feedback te geven."),
         ("onderhoud", "shield", "Hosting &amp; onderhoud",
          "Na de lancering begint het pas. Wij zorgen dat je website veilig, snel en up-to-date blijft, en helpen je verder te groeien.",
-         ["Snelle, veilige hosting in Europa", "Dagelijkse back-ups en monitoring", "Updates en beveiliging", "Kleine aanpassingen inbegrepen", "Vaste contactpersoon"],
+         ["Snelle hosting via een wereldwijd netwerk, met SSL", "Volledige versiegeschiedenis: elke wijziging is terug te zetten", "Uptime-bewaking", "Kleine aanpassingen inbegrepen", "Vaste contactpersoon"],
          "Abonnementen vanaf €39 per maand."),
     ]
     out = []
@@ -609,8 +610,8 @@ def build_werkwijze():
         ("Strategie &amp; merk", "Week 1", "Een strategiesessie waarin we je doelgroep, propositie, concurrenten en zoekwoorden scherp krijgen. Heb je nog geen logo of huisstijl? Dan ontwikkelen we die in deze fase."),
         ("Structuur &amp; ontwerp", "Week 1–2", "We maken de sitestructuur en het ontwerp van de belangrijkste pagina's. Je ziet precies hoe je website eruit komt te zien en hebt twee feedbackrondes."),
         ("Teksten &amp; bouw", "Week 2–5", "We schrijven de teksten (Groei en Op maat) en bouwen de website. SEO, GEO, schema.org, snelheid en toegankelijkheid zitten er vanaf de eerste regel code in."),
-        ("Testen &amp; lancering", "Week 4–6", "We testen op alle apparaten en browsers, controleren snelheid en vindbaarheid, en zetten de site live. We melden je aan bij Google Search Console en Bing."),
-        ("Meten &amp; groeien", "Na de lancering", "Na 30 dagen bespreken we de eerste resultaten. Met een onderhoudsabonnement blijven we je site verbeteren, beveiligen en uitbreiden."),
+        ("Testen &amp; lancering", "Week 4–6", "We testen op alle apparaten en browsers, controleren snelheid en vindbaarheid, en zetten de site live. We melden je site, met jouw account, aan bij Google Search Console en Bing."),
+        ("Meten &amp; groeien", "Na de lancering", "Na 30 dagen bespreken we de eerste resultaten. Met een onderhoudsabonnement blijven we je site bijhouden, verbeteren en uitbreiden."),
     ]
     lis = "".join(
         f'<li class="card reveal" data-delay="{(i%3)*80}"><span class="steps__time">Stap {i+1} · {t}</span><h3 class="mt-0" style="margin-top:var(--space-3)">{n}</h3><p>{d}</p></li>'
@@ -623,7 +624,7 @@ def build_werkwijze():
     ]
     body = page_hero(crumbs, "Werkwijze", "Helder proces. Geen verrassingen.",
                      "Van eerste gesprek tot een website die klanten oplevert, in gemiddeld 3 tot 6 weken. Je weet altijd wat er gebeurt, wat het kost en wat we van je nodig hebben.")
-    body += f'''<section class="section"><div class="container"><ol class="grid grid--3" style="list-style:none;padding:0;margin:0">{lis}</ol></div></section>
+    body += f'''<section class="section" aria-labelledby="stappen-titel"><div class="container"><h2 id="stappen-titel" class="visually-hidden">Het stappenplan</h2><ol class="grid grid--3" style="list-style:none;padding:0;margin:0">{lis}</ol></div></section>
 <section class="section section--white" aria-labelledby="ww-faq"><div class="container container--narrow"><div class="section-head section-head--center"><p class="eyebrow">Vragen over het proces</p><h2 id="ww-faq">Wat kun je verwachten?</h2></div>{faq_html(faqs)}</div></section>
 {cta_band()}'''
     howto = {
@@ -650,8 +651,8 @@ def build_prijzen():
     ]
     rows = "".join(f"<tr><td><strong>{n}</strong><span>{d}</span></td><td>{p}</td></tr>" for n, d, p in addons)
     plans = [
-        ("Basis", "€39", "Hosting in Europa, SSL, dagelijkse back-ups, updates en beveiligingsmonitoring."),
-        ("Zorgeloos", "€89", "Alles uit Basis + 1 uur aanpassingen per maand, maandelijkse snelheids- en SEO-check en een rapport."),
+        ("Basis", "€39", "Hosting, SSL, versiegeschiedenis en uptime-bewaking."),
+        ("Zorgeloos", "€89", "Alles uit Basis + 1 uur aanpassingen per maand en een maandelijkse Lighthouse-meting met kort rapport."),
         ("Groei", "€249", "Alles uit Zorgeloos + 2 SEO/GEO-artikelen per maand, doorlopende optimalisatie en een kwartaalgesprek."),
     ]
     plan_html = "".join(
@@ -664,7 +665,7 @@ def build_prijzen():
     ]
     body = page_hero(crumbs, "Prijzen", "Investeer in een website die zichzelf terugverdient.",
                      "Heldere pakketten met een vaste prijs. Alle bedragen zijn eenmalig en exclusief 21% btw, tenzij anders vermeld.")
-    body += f'''<section class="section"><div class="container">{pricing_cards()}</div></section>
+    body += f'''<section class="section" aria-labelledby="pakket-titel"><div class="container"><h2 id="pakket-titel" class="visually-hidden">Websitepakketten</h2>{pricing_cards()}</div></section>
 <section class="section section--tight" aria-labelledby="abon-titel"><div class="container">
   <div class="section-head reveal"><p class="eyebrow">Na de lancering</p><h2 id="abon-titel">Onderhoud &amp; groei-abonnementen</h2><p>Maandelijks opzegbaar. Voor ondernemers die zich willen focussen op hun bedrijf.</p></div>
   <div class="grid grid--3">{plan_html}</div>
@@ -701,7 +702,7 @@ def build_over():
     values = [
         ("Eerlijk", "We zeggen wat we denken en beloven alleen wat we waarmaken. Ook als dat betekent dat je iets niet nodig hebt."),
         ("Functioneel mooi", "Design is geen versiering. Elk detail heeft een doel: vertrouwen wekken, informeren of overtuigen."),
-        ("Meetbaar", "We bouwen voor resultaat: meer bezoekers, meer aanvragen, meer klanten. En dat maken we zichtbaar."),
+        ("Meetbaar", "We meten wat we opleveren, zoals snelheid, SEO en toegankelijkheid, en laten je de cijfers zien. Geen beloftes die we niet kunnen waarmaken."),
         ("Persoonlijk", "Eén vast aanspreekpunt dat jouw bedrijf kent. Geen tickets, geen wachtrijen."),
     ]
     vh = "".join(f'<div class="card reveal" data-delay="{i*60}"><div class="pillar__num" style="color:var(--accent-ink)">+0{i+1}</div><h3>{n}</h3><p>{d}</p></div>' for i, (n, d) in enumerate(values))
@@ -723,7 +724,7 @@ def build_over():
       <li>{I["check"]}<span>Vooraf een vaste prijs en een duidelijke planning</span></li>
       <li>{I["check"]}<span>Binnen 1 werkdag reactie op je vragen</span></li>
       <li>{I["check"]}<span>Jij bent eigenaar van je website en domein</span></li>
-      <li>{I["check"]}<span>Gebouwd volgens de nieuwste SEO-, GEO- en toegankelijkheidsrichtlijnen</span></li>
+      <li>{I["check"]}<span>Gebouwd volgens actuele SEO-, GEO- en toegankelijkheidsrichtlijnen, en gemeten vóór oplevering</span></li>
     </ul>
   </div>
 </div></section>
@@ -767,7 +768,7 @@ def build_contact():
     <div class="contact-item"><span class="card__icon">{I["mail"]}</span><div><strong>E-mail</strong><a href="mailto:{EMAIL}">{EMAIL}</a></div></div>
     <div class="contact-item"><span class="card__icon">{I["clock"]}</span><div><strong>Reactietijd</strong>Binnen 1 werkdag, op werkdagen van 9:00 tot 17:30.</div></div>
     <div class="contact-item"><span class="card__icon">{I["map"]}</span><div><strong>Werkgebied</strong>Heel Nederland en België — op locatie of online.</div></div>
-    <div class="card card--dark"><h3>Wat gebeurt er na je aanvraag?</h3>
+    <div class="card card--dark"><h2 style="font-size:var(--fs-lg)">Wat gebeurt er na je aanvraag?</h2>
       <ol style="padding-left:1.2rem;margin:0"><li>We nemen binnen 1 werkdag contact op.</li><li>We plannen een kennismaking van 30 minuten.</li><li>Je ontvangt binnen 2 werkdagen een voorstel met vaste prijs.</li></ol></div>
   </aside>
 </div></section>'''
@@ -884,7 +885,7 @@ ARTICLES = [
 <ul>
 <li>Stel maandelijks dezelfde vragen aan ChatGPT, Perplexity en Gemini (bijvoorbeeld: “welke webdesigner in [stad] raad je aan?”) en noteer of je genoemd wordt.</li>
 <li>Bekijk in je statistieken het verwijzende verkeer van domeinen als chatgpt.com en perplexity.ai.</li>
-<li>Houd in Google Search Console bij voor welke vragen je verschijnt in AI Overviews.</li>
+<li>Volg in Google Search Console je vertoningen en klikken. Let op: AI Overviews worden daar niet apart getoond, maar meegeteld bij de gewone zoekresultaten.</li>
 </ul>
 
 <h2 id="conclusie">Conclusie</h2>
