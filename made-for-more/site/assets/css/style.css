@@ -866,14 +866,14 @@ strong { font-weight: 600; }
 .notfound__code span { color: var(--accent); }
 
 /* ---------- 5. Beweging ---------- */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
-.reveal.is-visible { opacity: 1; transform: none; }
-.no-js .reveal { opacity: 1; transform: none; }
+/* Alleen elementen die bij het laden nog onder de vouw staan, krijgen .is-pending (via JS). */
+.reveal { transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+.reveal.is-pending { opacity: 0; transform: translateY(18px); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal.is-pending { opacity: 1; transform: none; }
   .ticker__track { animation: none; }
 }
 

@@ -40,20 +40,22 @@
 
   /* Elementen laten verschijnen bij scrollen (respecteert reduced motion) */
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var items = document.querySelectorAll(".reveal");
-  if (reduce || !("IntersectionObserver" in window)) {
-    items.forEach(function (el) { el.classList.add("is-visible"); });
-  } else {
+  if (!reduce && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
+          var el = entry.target;
+          el.classList.remove("is-pending");
+          io.unobserve(el);
+          // vertraging weghalen na het verschijnen, zodat hover-effecten direct reageren
+          setTimeout(function () { el.style.transitionDelay = ""; }, 700 + Number(el.dataset.delay || 0));
         }
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    items.forEach(function (el, i) {
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight) return; // al in beeld: direct zichtbaar
       el.style.transitionDelay = (el.dataset.delay || 0) + "ms";
+      el.classList.add("is-pending");
       io.observe(el);
     });
   }
