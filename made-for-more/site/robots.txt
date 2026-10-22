@@ -1,5 +1,5 @@
-# Made for More — robots.txt
-# Zoekmachines en AI-assistenten zijn welkom: zo word je gevonden in Google én in AI-antwoorden (GEO).
+# Made for More: robots.txt
+# Search engines and AI assistants are welcome.
 
 User-agent: *
 Allow: /

@@ -1,6 +1,6 @@
 # Made for More: website
 
-One-page website van **Made for More**, bureau voor influencer sponsorships.
+One-page website (Engelstalig) van **Made for More**, bureau voor influencer sponsorships.
 
 > Zelfstandig project, volledig los van de Project Masters lichtplan-site.
 > De eerdere webdesign-versie van deze site staat in de git-geschiedenis (commit `a4de1f5`).
@@ -23,7 +23,7 @@ made-for-more/
 
 ## Contactgegevens invullen
 
-In `site/index.html` staan invulplekken tussen blokhaken: `[Jouw naam]`, `[jouw@email.nl]`, `[telefoonnummer]`, `[nummer]` (WhatsApp, internationaal zonder + of 0, bijv. `31612345678`), `[gebruikersnaam]` (Instagram), `KvK [nummer]` en `[plaats]`. Zoek op `[` om ze allemaal te vinden. Vergeet ook de letter in het rondje bij je naam niet (`person__avatar`).
+De site is in het **Engels**. In `site/index.html` staan invulplekken tussen blokhaken: `[Your name]`, `[you@email.com]`, `[phone number]`, `[number]` (WhatsApp, internationaal zonder + of 0, bijv. `31612345678`), `[username]` (Instagram), `KvK [number]` en `[city]`. Zoek op `[` om ze allemaal te vinden. Vergeet ook de letter in het rondje bij je naam niet (`person__avatar`).
 
 ## Lokaal bekijken
 
