@@ -1,4 +1,4 @@
-# Configuratie voor Netlify (werkt ook als basis voor andere hosts)
+# Netlify configuration (also a useful starting point for other hosts)
 [build]
   publish = "."
 
@@ -16,7 +16,7 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
-# Zonder-www doorsturen naar www (pas aan als je liever zonder www werkt)
+# Redirect non-www to www (change this if you prefer the bare domain)
 [[redirects]]
   from = "https://madeformore.nl/*"
   to = "https://www.madeformore.nl/:splat"

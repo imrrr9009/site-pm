@@ -1,31 +1,31 @@
 # Made for More: website
 
-One-page website (Engelstalig) van **Made for More**, bureau voor influencer sponsorships.
+One-page website for **Made for More**, an influencer sponsorship agency.
 
-> Zelfstandig project, volledig los van de Project Masters lichtplan-site.
-> De eerdere webdesign-versie van deze site staat in de git-geschiedenis (commit `a4de1f5`).
+> Standalone project, completely separate from the Project Masters lighting-plan site.
+> The earlier web design version of this site is in the git history (commit `a4de1f5`).
 
-## Structuur
+## Structure
 
 ```
 made-for-more/
-├── site/                 ← dit is de website (deze map publiceer je)
-│   ├── index.html        De hele site: tekst, opmaak en contact in één bestand
-│   ├── assets/fonts/     Lettertypes (zelf gehost)
-│   ├── assets/img/       Logo's, iconen, deelbeeld (og-image.png)
+├── site/                 ← the website (this is the folder you publish)
+│   ├── index.html        The whole site: copy, styling and contact in one file
+│   ├── assets/fonts/     Fonts (self-hosted)
+│   ├── assets/img/       Logos, icons, social share image (og-image.png)
 │   ├── favicon.svg, site.webmanifest
 │   ├── robots.txt, sitemap.xml, llms.txt
 │   └── netlify.toml
 └── docs/
-    ├── MERKGIDS.md
-    └── STAPPENPLAN-LIVEGANG.md
+    ├── BRAND-GUIDE.md
+    └── GO-LIVE-GUIDE.md
 ```
 
-## Contactgegevens invullen
+## Filling in your contact details
 
-De site is in het **Engels**. In `site/index.html` staan invulplekken tussen blokhaken: `[Your name]`, `[you@email.com]`, `[phone number]`, `[number]` (WhatsApp, internationaal zonder + of 0, bijv. `31612345678`), `[username]` (Instagram), `KvK [number]` en `[city]`. Zoek op `[` om ze allemaal te vinden. Vergeet ook de letter in het rondje bij je naam niet (`person__avatar`).
+`site/index.html` contains placeholders in square brackets: `[Your name]`, `[you@email.com]`, `[phone number]`, `[number]` (WhatsApp, international format without + or leading 0, e.g. `31612345678`), `[username]` (Instagram), `KvK [number]` and `[city]`. Search for `[` to find them all. Also update the initial in the circle next to your name (`person__avatar`).
 
-## Lokaal bekijken
+## Preview locally
 
 ```bash
 cd made-for-more/site
@@ -33,15 +33,15 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-## Publiceren
+## Publishing
 
-Sleep de map `site/` naar Netlify (*Deploy manually*) of een andere host. Het volledige stappenplan staat in `docs/STAPPENPLAN-LIVEGANG.md`. Controleer of `madeformore.nl` het juiste domein is. Anders pas je het aan in `index.html` (canonical, og:url, og:image, JSON-LD), `robots.txt`, `sitemap.xml`, `llms.txt` en `netlify.toml`.
+Drag the `site/` folder into Netlify (*Deploy manually*) or upload it to any other host. The full step-by-step plan is in `docs/GO-LIVE-GUIDE.md`. Check that `madeformore.nl` is the right domain. If not, update it in `index.html` (canonical, og:url, og:image, JSON-LD), `robots.txt`, `sitemap.xml`, `llms.txt` and `netlify.toml`.
 
-## Gemeten (Google Lighthouse 12.6, lokaal, 22 oktober 2026)
+## Measured (Google Lighthouse 12.6, local, 22 October 2026)
 
-| | Prestaties | Toegankelijkheid | Best practices | SEO |
+| | Performance | Accessibility | Best practices | SEO |
 |---|---|---|---|---|
-| Mobiel | 99 | 100 | 100 | 100 |
+| Mobile | 99 | 100 | 100 | 100 |
 | Desktop | 100 | 100 | 100 | 100 |
 
-Meet na livegang opnieuw met [PageSpeed Insights](https://pagespeed.web.dev/).
+Measure again after going live with [PageSpeed Insights](https://pagespeed.web.dev/).

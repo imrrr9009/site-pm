@@ -32,7 +32,7 @@
  "@graph": [
   {
    "@type": ["Organization", "ProfessionalService"],
-   "@id": "https://www.madeformore.nl/#organisatie",
+   "@id": "https://www.madeformore.nl/#organization",
    "name": "Made for More",
    "url": "https://www.madeformore.nl/",
    "logo": "https://www.madeformore.nl/assets/img/icon-512.png",
@@ -47,7 +47,7 @@
    "url": "https://www.madeformore.nl/",
    "name": "Made for More",
    "inLanguage": "en",
-   "publisher": {"@id": "https://www.madeformore.nl/#organisatie"}
+   "publisher": {"@id": "https://www.madeformore.nl/#organization"}
   }
  ]
 }
@@ -187,7 +187,7 @@ svg { display: block; }
 .hero__lead { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); color: var(--muted-dark); max-width: 34rem; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.2rem; }
 
-/* Match-beeld */
+/* Match visual */
 .match { position: relative; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 0.75rem; }
 .match__card {
   background: var(--ink-2);
@@ -236,14 +236,14 @@ svg { display: block; }
   .match__plus { width: 40px; height: 40px; font-size: 1.6rem; box-shadow: 0 0 0 6px rgb(255 90 54 / 0.15); }
 }
 
-/* Secties */
+/* Sections */
 .section { padding-block: var(--section); }
 .section--white { background: var(--white); }
 .head { max-width: 640px; margin-bottom: clamp(2.5rem, 2rem + 2vw, 3.5rem); }
 .head h2 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.1rem); margin-top: 0.9rem; }
 .head p { margin-top: 1rem; font-size: 1.15rem; color: var(--muted); }
 
-/* Voor merken / voor creators */
+/* For brands / for creators */
 .sides { display: grid; gap: 1.25rem; }
 @media (min-width: 820px) { .sides { grid-template-columns: 1fr 1fr; } }
 .side {
@@ -264,7 +264,7 @@ svg { display: block; }
 .checks svg { width: 22px; height: 22px; color: var(--accent-ink); margin-top: 1px; }
 .side--ink .checks svg { color: var(--accent); }
 
-/* Werkwijze */
+/* How it works */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; counter-reset: s; }
 @media (min-width: 640px) { .steps { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, 1fr); } }
@@ -279,7 +279,7 @@ svg { display: block; }
 .steps h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
 .steps p { color: var(--muted); font-size: 0.975rem; }
 
-/* Waarom */
+/* Why */
 .why { display: grid; gap: 1.25rem; }
 @media (min-width: 760px) { .why { grid-template-columns: repeat(2, 1fr); } }
 .why__item { display: grid; grid-template-columns: 48px 1fr; gap: 1rem; align-items: start; }
@@ -349,16 +349,16 @@ a.channel:hover { border-color: var(--accent); transform: translateY(-2px); }
 </header>
 
 <main id="top">
-  <section class="hero dark" aria-labelledby="titel">
+  <section class="hero dark" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div>
         <p class="eyebrow">Influencer sponsorships</p>
-        <h1 id="titel">Brands and creators who <em>truly</em> belong together.</h1>
+        <h1 id="hero-title">Brands and creators who <em>truly</em> belong together.</h1>
         <p class="hero__lead">Made for More is an influencer sponsorship agency. We connect brands with the right creators, handle the agreements and guide the collaboration from first contact to results.</p>
         <div class="hero__cta">
           <a class="btn btn--accent" href="#contact">Get in touch
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-          <a class="btn btn--line" href="#werkwijze">How it works</a>
+          <a class="btn btn--line" href="#how-it-works">How it works</a>
         </div>
       </div>
 
@@ -388,11 +388,11 @@ a.channel:hover { border-color: var(--accent); transform: translateY(-2px); }
     </div>
   </section>
 
-  <section class="section" aria-labelledby="voor-wie">
+  <section class="section" aria-labelledby="who-title">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Who we work with</p>
-        <h2 id="voor-wie">We work for both sides of the same partnership.</h2>
+        <h2 id="who-title">We work for both sides of the same partnership.</h2>
       </div>
       <div class="sides">
         <article class="side">
@@ -421,11 +421,11 @@ a.channel:hover { border-color: var(--accent); transform: translateY(-2px); }
     </div>
   </section>
 
-  <section class="section section--white" id="werkwijze" aria-labelledby="werkwijze-titel">
+  <section class="section section--white" id="how-it-works" aria-labelledby="how-it-works-title">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">How it works</p>
-        <h2 id="werkwijze-titel">From first conversation to successful partnership.</h2>
+        <h2 id="how-it-works-title">From first conversation to successful partnership.</h2>
       </div>
       <ol class="steps">
         <li><h3>Introduction</h3><p>We discuss what you want to achieve, with whom and on what budget.</p></li>
@@ -436,11 +436,11 @@ a.channel:hover { border-color: var(--accent); transform: translateY(-2px); }
     </div>
   </section>
 
-  <section class="section" aria-labelledby="waarom">
+  <section class="section" aria-labelledby="why-title">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Why Made for More</p>
-        <h2 id="waarom">Personal, honest and hassle-free.</h2>
+        <h2 id="why-title">Personal, honest and hassle-free.</h2>
       </div>
       <div class="why">
         <div class="why__item">
@@ -463,11 +463,11 @@ a.channel:hover { border-color: var(--accent); transform: translateY(-2px); }
     </div>
   </section>
 
-  <section class="contact dark" id="contact" aria-labelledby="contact-titel">
+  <section class="contact dark" id="contact" aria-labelledby="contact-title">
     <div class="wrap contact__grid">
       <div>
         <p class="eyebrow">Contact</p>
-        <h2 id="contact-titel">Let's make something <span>great</span>.</h2>
+        <h2 id="contact-title">Let's make something <span>great</span>.</h2>
         <p class="contact__intro">Are you a brand looking for creators, or a creator looking for sponsors? Get in touch for a no-obligation conversation.</p>
         <div class="person">
           <div class="person__avatar" aria-hidden="true">N</div>
