@@ -6,10 +6,14 @@
 <title>Made for More | Influencer sponsorships for brands and creators</title>
 <meta name="description" content="Made for More connects brands with creators who are a genuine fit. We find the right match, handle the agreements and guide the collaboration.">
 <link rel="canonical" href="https://www.madeformore.nl/">
+<link rel="alternate" hreflang="en" href="https://www.madeformore.nl/">
+<link rel="alternate" hreflang="nl" href="https://www.madeformore.nl/nl/">
+<link rel="alternate" hreflang="x-default" href="https://www.madeformore.nl/">
 <meta name="theme-color" content="#0F1115">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nl_NL">
 <meta property="og:site_name" content="Made for More">
 <meta property="og:title" content="Made for More | Influencer sponsorships">
 <meta property="og:description" content="We connect brands with creators who are a genuine fit, and handle the rest.">
@@ -172,6 +176,29 @@ svg { display: block; }
 .brand svg { width: 36px; height: 36px; }
 .brand b { color: var(--accent); font-weight: 750; }
 .top .btn { min-height: 44px; padding: 0.55rem 1.1rem; }
+.top__actions { display: flex; align-items: center; gap: 0.75rem; }
+.lang {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid rgb(255 255 255 / 0.25);
+  border-radius: 999px;
+}
+.lang a {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 38px;
+  padding: 0 0.6rem;
+  border-radius: 999px;
+  color: var(--muted-dark);
+  font: 600 0.8125rem/1 var(--font-body);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color 200ms var(--ease), background-color 200ms var(--ease);
+}
+.lang a:hover { color: var(--white); }
+.lang a[aria-current="true"] { background: var(--white); color: var(--ink); }
+@media (max-width: 480px) { .top .btn { display: none; } }
 
 /* Hero */
 .hero {
@@ -344,7 +371,13 @@ a.channel:hover { border-color: var(--accent); transform: translateY(-2px); }
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FFFFFF"/><path d="M12 50V33.5a7.5 7.5 0 0 1 15 0V50M27 33.5a7.5 7.5 0 0 1 15 0V50" fill="none" stroke="#0F1115" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 8.5v13M43.5 15h13" stroke="#FF5A36" stroke-width="5.5" stroke-linecap="round"/></svg>
       <span>made for more<b>+</b></span>
     </a>
-    <a class="btn btn--accent" href="#contact">Contact</a>
+    <div class="top__actions">
+      <nav class="lang" aria-label="Language">
+        <a href="./" hreflang="en" lang="en" aria-current="true">EN</a>
+        <a href="nl/" hreflang="nl" lang="nl">NL</a>
+      </nav>
+      <a class="btn btn--accent" href="#contact">Contact</a>
+    </div>
   </div>
 </header>
 
