@@ -38,4 +38,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://www.madeformore.nl/sitemap.xml
+Sitemap: https://www.madeformore.com/sitemap.xml

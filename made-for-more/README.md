@@ -44,7 +44,7 @@ python3 -m http.server 8000
 
 ## Publishing
 
-Drag the `site/` folder into Netlify (*Deploy manually*) or upload it to any other host. The full step-by-step plan is in `docs/GO-LIVE-GUIDE.md`. Check that `madeformore.nl` is the right domain. If not, update it in `index.html` and `nl/index.html` (canonical, hreflang, og:url, og:image, JSON-LD), `robots.txt`, `sitemap.xml`, `llms.txt` and `netlify.toml`.
+Drag the `site/` folder into Netlify (*Deploy manually*) or upload it to any other host. The full step-by-step plan is in `docs/GO-LIVE-GUIDE.md`. The domain is **`www.madeformore.com`** (the bare `madeformore.com` redirects to www via `netlify.toml`). To change it, update it in `index.html` and `nl/index.html` (canonical, hreflang, og:url, og:image, JSON-LD), `robots.txt`, `sitemap.xml`, `llms.txt` and `netlify.toml`.
 
 ## Measured (Google Lighthouse 12.6, local, 22 October 2026)
 

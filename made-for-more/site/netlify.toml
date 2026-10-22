@@ -18,7 +18,7 @@
 
 # Redirect non-www to www (change this if you prefer the bare domain)
 [[redirects]]
-  from = "https://madeformore.nl/*"
-  to = "https://www.madeformore.nl/:splat"
+  from = "https://madeformore.com/*"
+  to = "https://www.madeformore.com/:splat"
   status = 301
   force = true
