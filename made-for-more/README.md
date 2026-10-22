@@ -22,11 +22,17 @@ made-for-more/
     └── GO-LIVE-GUIDE.md
 ```
 
-## Filling in your contact details
+## Contact details
 
-Both `site/index.html` (English) and `site/nl/index.html` (Dutch) contain placeholders in square brackets: `[Your name]`, `[you@email.com]`, `[phone number]`, `[number]` (WhatsApp, international format without + or leading 0, e.g. `31612345678`), `[username]` (Instagram), `KvK [number]` and `[city]`. Search for `[` to find them all. Also update the initial in the circle next to your name (`person__avatar`).
+Both pages show the same details:
 
-**Editing text:** the two pages are separate files. When you change the layout or contact details, change both. The EN | NL switch in the header links the two pages, and both pages tell search engines about each other with `hreflang` tags (also listed in `sitemap.xml`).
+- **Name:** Imran El Mayouri (Founder / Oprichter)
+- **Email:** madeformorebureau@outlook.com
+- **Phone and WhatsApp:** +31 6 44767638
+
+The pages are two separate files (`site/index.html` and `site/nl/index.html`). When you change the layout or contact details, change both. The EN | NL switch in the header links the two pages, and both pages tell search engines about each other with `hreflang` tags (also listed in `sitemap.xml`).
+
+Once registered with the Dutch Chamber of Commerce, add your **KvK number** to the footer of both pages: Dutch law requires it on a business website.
 
 ## Preview locally
 
