@@ -2,12 +2,11 @@
 
 ## Merkidee
 
-**Made for More = meer dan een website.**
-Elk bedrijf is gemaakt voor meer dan het nu online laat zien. Wij maken dat zichtbaar. Het **plusteken (+)** is het centrale beeldmerk: meer vindbaarheid, meer vertrouwen, meer aanvragen.
+**Made for More = samenwerkingen die meer opleveren.**
+Een goede match tussen merk en creator levert meer op dan de som van beide. Het **plusteken (+)** is het centrale beeldmerk: merk + creator.
 
-- **Belofte:** een website die laat zien wie je bent, en klanten oplevert.
-- **Slogan:** *Gemaakt voor meer.*
-- **Kernwaarden:** eerlijk · functioneel mooi · meetbaar · persoonlijk
+- **Belofte:** merken en creators die echt bij elkaar passen.
+- **Kernwaarden:** persoonlijk · passend · eerlijk · transparant
 
 ## Logo (concept)
 
@@ -57,16 +56,15 @@ Verhouding: ongeveer 70% papier, 25% inkt, 5% oranje. Het oranje werkt juist omd
 | Je-vorm, direct en warm | U-vorm, afstandelijk |
 | Concreet: prijzen, termijnen, resultaat | Vaag: "innovatieve oplossingen op maat" |
 | Korte zinnen, actieve vorm | Lange zinnen, vakjargon |
-| Uitleggen wat SEO/GEO oplevert | Imponeren met afkortingen |
 | Eerlijk: "dat heb je niet nodig" | Alles verkopen |
 
 **Voorbeeldzinnen**
-- "Je bedrijf is beter dan je website laat zien."
-- "Een website is geen visitekaartje. Het is je beste verkoper."
-- "Vaste prijs. Geen kleine lettertjes."
+- "Merken en creators die echt bij elkaar passen."
+- "Een goede match draait om meer dan het aantal volgers."
+- "Laten we iets moois maken."
 
 ## Beeldstijl (advies)
 
 - Eigen, echte foto's van jou aan het werk, bij voorkeur geen stockfoto's.
-- Mockups van klantwebsites op laptop en telefoon, op een warme papieren achtergrond.
+- Beelden van echte samenwerkingen (met toestemming van merk en creator).
 - Het "+"-teken als terugkerend grafisch element op social media en in presentaties.

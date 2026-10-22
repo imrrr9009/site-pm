@@ -3,7 +3,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /bedankt/
 
 # AI-zoekmachines en -assistenten expliciet toestaan
 User-agent: GPTBot

@@ -1,35 +1,29 @@
-# Made for More — website
+# Made for More: website
 
-Website van **Made for More**, webdesign, merkidentiteit en vindbaarheid (SEO & GEO) voor ondernemers.
+One-page website van **Made for More**, bureau voor influencer sponsorships.
 
-> Dit is een **zelfstandig project**, volledig los van de Project Masters lichtplan-site. Er worden geen bestanden gedeeld. De map `made-for-more/` kan in zijn geheel naar een eigen repository worden verplaatst.
+> Zelfstandig project, volledig los van de Project Masters lichtplan-site.
+> De eerdere webdesign-versie van deze site staat in de git-geschiedenis (commit `a4de1f5`).
 
 ## Structuur
 
 ```
 made-for-more/
-├── site/                  ← dit is de website (deze map publiceer je)
-│   ├── index.html         Home
-│   ├── diensten/          Diensten (webdesign, merk, SEO, GEO, teksten, onderhoud)
-│   ├── werkwijze/         Stappenplan
-│   ├── prijzen/           Pakketten, abonnementen, extra's
-│   ├── over-ons/          Verhaal, waarden, belofte
-│   ├── contact/           Contactformulier
-│   ├── kennisbank/        Blog + 2 artikelen (GEO, websiteprijzen)
-│   ├── privacy/ bedankt/ 404.html
-│   ├── assets/css|js|img  Stijl, scripts, logo's, OG-afbeelding, iconen
-│   ├── robots.txt         AI-crawlers expliciet toegestaan
-│   ├── sitemap.xml
-│   ├── llms.txt           Samenvatting voor AI-modellen (GEO)
-│   ├── site.webmanifest
-│   └── netlify.toml       Headers, caching, redirect
-├── tools/build.py         Genereert alle HTML-pagina's (header/footer/schema op één plek)
+├── site/                 ← dit is de website (deze map publiceer je)
+│   ├── index.html        De hele site: tekst, opmaak en contact in één bestand
+│   ├── assets/fonts/     Lettertypes (zelf gehost)
+│   ├── assets/img/       Logo's, iconen, deelbeeld (og-image.png)
+│   ├── favicon.svg, site.webmanifest
+│   ├── robots.txt, sitemap.xml, llms.txt
+│   └── netlify.toml
 └── docs/
-    ├── BEDRIJFSPLAN.md    Advies & groeiplan voor Made for More
-    └── MERKGIDS.md        Logo, kleuren, typografie, tone of voice
+    ├── MERKGIDS.md
+    └── STAPPENPLAN-LIVEGANG.md
 ```
 
-Geen framework, geen build-stap nodig om te publiceren: pure HTML/CSS en ~3 kB JavaScript. Dat is de snelste en meest crawlbare basis voor SEO en GEO.
+## Contactgegevens invullen
+
+In `site/index.html` staan invulplekken tussen blokhaken: `[Jouw naam]`, `[jouw@email.nl]`, `[telefoonnummer]`, `[nummer]` (WhatsApp, internationaal zonder + of 0, bijv. `31612345678`), `[gebruikersnaam]` (Instagram), `KvK [nummer]` en `[plaats]`. Zoek op `[` om ze allemaal te vinden. Vergeet ook de letter in het rondje bij je naam niet (`person__avatar`).
 
 ## Lokaal bekijken
 
@@ -39,68 +33,15 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-## Teksten of pagina's aanpassen
-
-Alle inhoud staat in `tools/build.py`. Pas daar de tekst aan en genereer opnieuw:
-
-```bash
-python3 made-for-more/tools/build.py
-```
-
-Zo blijven header, footer, menu, sitemap en schema.org-gegevens op alle pagina's gelijk. (Je kunt de HTML-bestanden ook direct bewerken, maar dan worden je wijzigingen bij een volgende build overschreven.)
-
 ## Publiceren
 
-**Aanbevolen: Netlify** (gratis voor deze omvang)
-1. Maak een account op netlify.com → *Add new site* → koppel deze repository, of sleep de map `site/` in het venster.
-2. Publish directory: `made-for-more/site` (bij koppelen aan de repo).
-3. Het contactformulier werkt direct via **Netlify Forms**. Stel onder *Forms → Notifications* in dat aanvragen naar je e-mail gaan.
-4. Koppel je domein onder *Domain management*. HTTPS gaat automatisch.
+Sleep de map `site/` naar Netlify (*Deploy manually*) of een andere host. Het volledige stappenplan staat in `docs/STAPPENPLAN-LIVEGANG.md`. Controleer of `madeformore.nl` het juiste domein is. Anders pas je het aan in `index.html` (canonical, og:url, og:image, JSON-LD), `robots.txt`, `sitemap.xml`, `llms.txt` en `netlify.toml`.
 
-Andere hosts (Cloudflare Pages, Vercel, GitHub Pages) werken ook. Het formulier heeft daar wel een dienst als Formspree nodig: vervang dan de `action` van het formulier in `build.py`.
-
-## Checklist vóór livegang
-
-- [ ] **Domeinnaam** registreren (`madeformore.nl` is aangenomen, controleer of hij vrij is). Ander domein? Vervang `SITE` in `tools/build.py` en het domein in `robots.txt`, `llms.txt` en `netlify.toml`.
-- [ ] **E-mailadres** `info@madeformore.nl` aanmaken, of `EMAIL` in `build.py` aanpassen.
-- [ ] **Prijzen** controleren in `build.py` (`PACKAGES`, abonnementen, extra's) en `llms.txt`.
-- [ ] **Over ons**: persoonlijke foto, naam en achtergrond van de oprichter toevoegen (zie TODO in de pagina). Dit is belangrijk voor vertrouwen én E-E-A-T.
-- [ ] **Privacyverklaring** laten controleren en KvK-nummer en adres invullen.
-- [ ] **Footer**: KvK-nummer en btw-id toevoegen zodra je ingeschreven bent (wettelijk verplicht op een zakelijke website).
-- [ ] **Schema.org** (`ORG` in `build.py`): `telephone`, `address`, `vatID` en `sameAs` (LinkedIn, Instagram, Google Bedrijfsprofiel) toevoegen.
-- [ ] **Google Search Console** en **Bing Webmaster Tools**: site verifiëren en `sitemap.xml` indienen. Bing voedt onder meer Microsoft Copilot en wordt door meerdere AI-zoekdiensten gebruikt.
-- [ ] **Statistieken**: een cookieloze tool kiezen (bijv. Plausible, Umami of Simple Analytics) en het script toevoegen. Dan is geen cookiebanner nodig.
-- [ ] **Google Bedrijfsprofiel** aanmaken.
-- [ ] Testen met PageSpeed Insights, de Rich Results Test en de Schema Markup Validator.
-
-## Wat er aan SEO & GEO is ingebouwd
-
-| Onderdeel | Waar |
-|---|---|
-| Unieke `<title>` (≤ 60 tekens) en meta-description (≤ 160) per pagina | alle pagina's |
-| Eén H1 per pagina, logische kopstructuur, kruimelpaden | alle pagina's |
-| Canonical, `hreflang="nl-NL"`, Open Graph + Twitter Card, OG-afbeelding | `<head>` |
-| JSON-LD `@graph`: Organization/ProfessionalService, WebSite, WebPage, BreadcrumbList, Service, OfferCatalog, HowTo, FAQPage, Blog, BlogPosting | per pagina |
-| Citeerbare definities, "In het kort"-blokken, vraag-als-kop, feiten met bron | home, kennisbank |
-| `robots.txt` met AI-crawlers (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended…) | `site/robots.txt` |
-| `llms.txt` met feitelijke bedrijfssamenvatting | `site/llms.txt` |
-| XML-sitemap met `lastmod` | `site/sitemap.xml` |
-| Snel: geen framework, `defer`-script, zelf gehoste lettertypes met preload, geen layout shift | overal |
-| Toegankelijk: skip-link, zichtbare focus, labels, aria, contrast ≥ 4,5:1, `prefers-reduced-motion` | overal |
-
-### Gemeten resultaat (Google Lighthouse 12.6, lokaal, 11 oktober 2026)
+## Gemeten (Google Lighthouse 12.6, lokaal, 22 oktober 2026)
 
 | | Prestaties | Toegankelijkheid | Best practices | SEO |
 |---|---|---|---|---|
-| Mobiel (alle 10 hoofdpagina's) | 98–99 | 100 | 100 | 100 |
-| Desktop (alle 10 hoofdpagina's) | 100 | 100 | 100 | 100 |
+| Mobiel | 99 | 100 | 100 | 100 |
+| Desktop | 100 | 100 | 100 | 100 |
 
-LCP mobiel 2,0–2,3 s (gesimuleerd 4G), CLS 0. Meet na livegang opnieuw met [PageSpeed Insights](https://pagespeed.web.dev/): echte hosting kan iets afwijken.
-
-### Wat we wel en niet beloven
-
-- **Wel (zelf te leveren en te meten):** technische SEO, gestructureerde data, snelheid, toegankelijkheid, duidelijke en citeerbare content, sitemap/robots/llms.txt, en een Lighthouse-meting bij oplevering.
-- **Niet (niemand kan dit garanderen):** een positie in Google, of een vermelding door ChatGPT, Perplexity of andere AI. Die hangen af van concurrentie, tijd, reviews en vermeldingen op andere sites.
-- **Alleen met extra hulpmiddelen:** zoekvolumes, posities volgen en backlinks. Daarvoor zijn accounts nodig (Google Search Console van de klant, of een dataleverancier zoals DataForSEO, Semrush of Ahrefs).
-
-Eerlijke kanttekeningen: Google toont FAQ-rich-results sinds 2023 vrijwel alleen nog voor overheids- en zorgsites. De FAQ-markup helpt wel bij het begrip door zoekmachines en AI. `llms.txt` is een voorstel en nog geen officiële standaard. Het kost niets en kan geen kwaad.
+Meet na livegang opnieuw met [PageSpeed Insights](https://pagespeed.web.dev/).
