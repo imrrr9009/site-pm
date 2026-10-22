@@ -1,0 +1,49 @@
+/* Cookie banner + footer links. Uses the colour tokens defined on each page. */
+.cookie {
+  position: fixed;
+  z-index: 100;
+  left: 16px;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  max-width: 520px;
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 2px 4px rgb(15 17 21 / 0.08), 0 24px 60px -20px rgb(15 17 21 / 0.45);
+  font: 400 0.95rem/1.5 var(--font-body);
+}
+.cookie[hidden] { display: none; }
+.cookie__title { font: 700 1.05rem/1.2 var(--font-display); letter-spacing: -0.01em; margin: 0; }
+.cookie p { margin: 0; color: var(--muted); }
+.cookie a { color: var(--accent-ink); }
+.cookie__actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.cookie__btn {
+  flex: 1 1 110px;
+  min-height: 46px;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--white);
+  font: 600 0.9rem/1.2 var(--font-body);
+  cursor: pointer;
+}
+.cookie__btn:hover { background: var(--ink-2); }
+.cookie__btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.foot__links { display: flex; flex-wrap: wrap; gap: 1rem; }
+.foot__links a, .foot__links button {
+  color: var(--muted-dark);
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+.foot__links a:hover, .foot__links button:hover { color: var(--white); }

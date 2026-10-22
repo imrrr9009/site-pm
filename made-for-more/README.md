@@ -12,6 +12,9 @@ made-for-more/
 ├── site/                 ← the website (this is the folder you publish)
 │   ├── index.html        English page (main language): copy, styling and contact in one file
 │   ├── nl/index.html     Dutch page, same layout
+│   ├── privacy/          Privacy statement (EN); nl/privacy/ is the Dutch version
+│   ├── assets/js/consent.js   Cookie banner: loads impact.com only after "Accept"
+│   ├── assets/css/consent.css Styles for the cookie banner
 │   ├── assets/fonts/     Fonts (self-hosted)
 │   ├── assets/img/       Logos, icons, social share image (og-image.png)
 │   ├── favicon.svg, site.webmanifest
@@ -33,6 +36,13 @@ Both pages show the same details:
 The pages are two separate files (`site/index.html` and `site/nl/index.html`). When you change the layout or contact details, change both. The EN | NL switch in the header links the two pages, and both pages tell search engines about each other with `hreflang` tags (also listed in `sitemap.xml`).
 
 Once registered with the Dutch Chamber of Commerce, add your **KvK number** to the footer of both pages: Dutch law requires it on a business website.
+
+## Cookies and impact.com
+
+- The **impact.com site verification** meta tag is in the `<head>` of both pages.
+- The **impact.com tracking script** is *not* loaded directly. `assets/js/consent.js` shows a cookie banner (EN/NL) and only loads the script after the visitor clicks **Accept**. **Decline** stores the choice and loads nothing. The footer link **Cookie settings** reopens the banner; withdrawing consent removes impact.com's `IR_` cookies and reloads the page.
+- The choice is stored in the browser's `localStorage` under `mfm-cookie-consent`.
+- The privacy statement (`/privacy/` and `/nl/privacy/`) describes this. Have it checked, and add your KvK number once registered.
 
 ## Preview locally
 

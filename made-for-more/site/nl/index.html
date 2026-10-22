@@ -11,8 +11,6 @@
 <link rel="alternate" hreflang="x-default" href="https://www.madeformore.com/">
 <meta name="theme-color" content="#0F1115">
 <meta name='impact-site-verification' value='20eadfa2-4112-45ba-84ba-ee9b94e97a8c'>
-<!-- impact.com tracking -->
-<script type="text/javascript">(function(i,m,p,a,c,t){c.ire_o=p;c[p]=c[p]||function(){(c[p].a=c[p].a||[]).push(arguments)};t=a.createElement(m);var z=a.getElementsByTagName(m)[0];t.async=1;t.src=i;z.parentNode.insertBefore(t,z)})('https://utt.impactcdn.com/P-A8025348-a1f4-4590-b8f6-998c19c3d2f71.js','script','impactStat',document,window);impactStat('transformLinks');impactStat('trackImpression');</script>
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
@@ -32,6 +30,7 @@
 <link rel="manifest" href="../site.webmanifest">
 <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/consent.css">
 
 <script type="application/ld+json">
 {
@@ -534,8 +533,19 @@ a.channel:hover { border-color: var(--accent); transform: translateY(-2px); }
 <footer class="foot">
   <div class="wrap">
     <p>© 2026 Made for More · Influencer sponsorships</p>
+    <p class="foot__links"><a href="privacy/">Privacy</a><button type="button" data-cookie-settings>Cookie-instellingen</button></p>
   </div>
 </footer>
 
+
+<div class="cookie" id="cookie-banner" role="region" aria-label="Toestemming voor cookies" hidden>
+  <p class="cookie__title">Cookies</p>
+  <p>We gebruiken een cookie van onze partner impact.com om te zien via welke links bezoekers op onze site komen. Die plaatsen we alleen als je akkoord gaat. <a href="privacy/">Privacyverklaring</a></p>
+  <div class="cookie__actions">
+    <button class="cookie__btn" type="button" id="cookie-accept">Accepteren</button>
+    <button class="cookie__btn" type="button" id="cookie-decline">Weigeren</button>
+  </div>
+</div>
+<script src="../assets/js/consent.js" defer></script>
 </body>
 </html>

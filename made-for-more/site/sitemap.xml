@@ -14,4 +14,18 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.madeformore.com/nl/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.madeformore.com/"/>
   </url>
+  <url>
+    <loc>https://www.madeformore.com/privacy/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.madeformore.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.madeformore.com/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.madeformore.com/privacy/"/>
+  </url>
+  <url>
+    <loc>https://www.madeformore.com/nl/privacy/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.madeformore.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.madeformore.com/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.madeformore.com/privacy/"/>
+  </url>
 </urlset>
