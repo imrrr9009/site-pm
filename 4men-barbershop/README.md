@@ -16,16 +16,10 @@ Ontwerp: donker met goud, Cormorant voor koppen en Montserrat voor tekst, gekoze
 
 ## Voor livegang
 
-- Haal `<meta name="robots" content="noindex">` weg zodra de eigenaar akkoord is.
-- Vervang de Treatwell-link (`https://www.treatwell.nl/en/place/4men-barbershop/`) door de exacte
-  link van de "Book now"-knop op de huidige site (5× in `index.html`).
+- Haal `<meta name="robots" content="noindex">` weg zodra de site op 4menbarbershop.nl komt.
+- Controleer de prijzen op Treatwell (`https://www.treatwell.nl/salon/4men-barbershop/`): ze komen uit
+  Treatwell-pagina's van verschillende datums. Tondeuse + baard en Hot towel scheerbeurt staan als
+  "prijs via Treatwell" omdat er geen prijs voor te vinden was.
 - Vraag de originele foto's in hogere resolutie (minstens 1600 px breed) en vervang die in `img/`.
-
-## Open vragen voor de eigenaar ([TODO] in de pagina)
-
-1. Prijzen per dienst (8×)
-2. Sinds wanneer de zaak in Rotterdam zit
-3. Drie reviews om te tonen (tekst + voornaam + bron)
-4. Treatwell- en Google-score bijwerken vlak voor livegang
-5. Wel of geen producten verkopen in de zaak
-6. Eigen e-mailadres op het domein, bijvoorbeeld info@4menbarbershop.nl
+- Optioneel: drie reviews om te tonen, sinds welk jaar de zaak in Rotterdam zit, producten in de zaak,
+  een eigen e-mailadres op het domein.

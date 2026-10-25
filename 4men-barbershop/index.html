@@ -27,6 +27,7 @@
   "url": "https://www.4menbarbershop.nl/",
   "image": "https://www.4menbarbershop.nl/img/og.jpg",
   "telephone": "+31103140840",
+  "priceRange": "€25 - €65",
   "email": "4men.barbershop.nl@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -51,7 +52,7 @@
   ],
   "sameAs": [
     "https://www.instagram.com/4men.barbershop.nl/",
-    "https://www.treatwell.nl/en/place/4men-barbershop/"
+    "https://www.treatwell.nl/salon/4men-barbershop/"
   ]
 }
 </script>
@@ -227,7 +228,8 @@ a:hover { color: var(--color-accent-hover); }
 .price-row { display: flex; align-items: baseline; gap: 0.75rem; }
 .price-row h3 { font-size: var(--text-h3); }
 .price-row .leader { flex: 1; border-bottom: 1px dotted rgb(243 237 228 / 0.35); transform: translateY(-0.3em); min-width: 1.5rem; }
-.price-row .price { white-space: nowrap; font-weight: 600; }
+.price-row .price { white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
+.price-row .price-note { font-weight: 400; font-size: var(--text-sm); color: var(--color-muted-foreground); }
 .price-list .duration { color: var(--color-muted-foreground); font-size: var(--text-sm); margin-top: 0.3rem; }
 .price-list .extra { color: var(--color-muted-foreground); font-size: var(--text-sm); }
 .services-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem 2rem; margin-top: 2.5rem; }
@@ -242,14 +244,8 @@ a:hover { color: var(--color-accent-hover); }
 .score-src { font-weight: 600; margin-top: 0.75rem; }
 .score-count { color: var(--color-muted-foreground); font-size: var(--text-sm); }
 .score a { display: inline-block; margin-top: 0.75rem; font-size: var(--text-sm); padding-block: 0.4rem; }
-.quotes { display: grid; gap: 1rem; margin-top: 1rem; }
-.quote { background: var(--color-surface-2); padding: clamp(1.5rem, 3vw, 2.25rem); }
-.quote::before { content: "\201C"; display: block; font-family: var(--font-heading); font-size: 4rem; line-height: 0.6; color: var(--color-accent); margin-bottom: 0.75rem; }
-.quote blockquote { font-family: var(--font-heading); font-size: var(--text-h3); line-height: 1.15; }
-.quote figcaption { margin-top: 1rem; font-size: var(--text-sm); color: var(--color-muted-foreground); }
 .reviews-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
 .reviews-foot p { font-size: var(--text-sm); color: var(--color-muted-foreground); }
-@media (min-width: 52rem) { .quotes { grid-template-columns: repeat(3, 1fr); } }
 
 /* 5. Team */
 .team-grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
@@ -375,7 +371,7 @@ a:hover { color: var(--color-accent-hover); }
         <a href="#fotos">Foto's</a>
         <a href="#bezoek">Bezoek ons</a>
       </nav>
-      <a class="btn btn-primary" href="https://www.treatwell.nl/en/place/4men-barbershop/" rel="noopener">Boek nu</a>
+      <a class="btn btn-primary" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Boek nu</a>
     </div>
   </div>
 </header>
@@ -386,13 +382,13 @@ a:hover { color: var(--color-accent-hover); }
       <div class="hero-copy">
         <p class="kicker">4MEN Barbershop · Goudsesingel 101</p>
         <h1 id="titel">Barbershop in <em>Rotterdam</em></h1>
-        <a class="rating" href="https://www.treatwell.nl/en/place/4men-barbershop/reviews/" rel="noopener">
+        <a class="rating" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">
           <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg></span>
           <span>4,9 uit 1000+ reviews</span>
         </a>
         <p class="hero-lead">Vakmanschap sinds 2003, aan de Goudsesingel. Knippen, baard en hot towel shave door ervaren barbiers.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://www.treatwell.nl/en/place/4men-barbershop/" rel="noopener">Boek je knipbeurt<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-primary" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Boek je knipbeurt<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn-outline" href="https://wa.me/31648351081" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>App ons</a>
         </div>
         <div class="hero-meta">
@@ -423,18 +419,18 @@ a:hover { color: var(--color-accent-hover); }
       </div>
       <div class="services-board reveal">
         <ul class="price-list">
-          <li><div class="price-row"><h3>Knippen</h3><span class="leader" aria-hidden="true"></span><span class="price"><span class="todo">[TODO: prijs]</span></span></div><p class="duration">45 min</p></li>
-          <li><div class="price-row"><h3>Baard trimmen</h3><span class="leader" aria-hidden="true"></span><span class="price"><span class="todo">[TODO: prijs]</span></span></div><p class="duration">30 min · met hot towel en baardolie</p></li>
-          <li><div class="price-row"><h3>Lang haar knippen</h3><span class="leader" aria-hidden="true"></span><span class="price"><span class="todo">[TODO: prijs]</span></span></div><p class="duration">1 uur</p></li>
-          <li><div class="price-row"><h3>Tondeuse (buzz cut)</h3><span class="leader" aria-hidden="true"></span><span class="price"><span class="todo">[TODO: prijs]</span></span></div><p class="duration">15 min</p></li>
-          <li><div class="price-row"><h3>Tondeuse + baard</h3><span class="leader" aria-hidden="true"></span><span class="price"><span class="todo">[TODO: prijs]</span></span></div><p class="duration">50 min · tondeuse en baard trimmen</p></li>
-          <li><div class="price-row"><h3>Hot towel scheerbeurt</h3><span class="leader" aria-hidden="true"></span><span class="price"><span class="todo">[TODO: prijs]</span></span></div><p class="duration">30 min</p></li>
-          <li><div class="price-row"><h3>Knippen + baard</h3><span class="leader" aria-hidden="true"></span><span class="price"><span class="todo">[TODO: prijs]</span></span></div><p class="duration">1 uur 15 min · combi</p></li>
-          <li><div class="price-row"><h3>Jongens knippen</h3><span class="leader" aria-hidden="true"></span><span class="price"><span class="todo">[TODO: prijs]</span></span></div><p class="duration">30 min · 3 t/m 10 jaar</p></li>
+          <li><div class="price-row"><h3>Knippen</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 43</span></div><p class="duration">45 min</p></li>
+          <li><div class="price-row"><h3>Baard trimmen</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 35</span></div><p class="duration">30 min · met hot towel en baardolie</p></li>
+          <li><div class="price-row"><h3>Lang haar knippen</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 55</span></div><p class="duration">1 uur</p></li>
+          <li><div class="price-row"><h3>Tondeuse (buzz cut)</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 25</span></div><p class="duration">15 min</p></li>
+          <li><div class="price-row"><h3>Tondeuse + baard</h3><span class="leader" aria-hidden="true"></span><span class="price price-note">prijs via Treatwell</span></div><p class="duration">50 min · tondeuse en baard trimmen</p></li>
+          <li><div class="price-row"><h3>Hot towel scheerbeurt</h3><span class="leader" aria-hidden="true"></span><span class="price price-note">prijs via Treatwell</span></div><p class="duration">30 min</p></li>
+          <li><div class="price-row"><h3>Knippen + baard</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 65</span></div><p class="duration">1 uur 15 min · combi</p></li>
+          <li><div class="price-row"><h3>Jongens knippen</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 35</span></div><p class="duration">30 min · 3 t/m 10 jaar</p></li>
         </ul>
         <div class="services-foot">
-          <p class="extra"><span class="todo">[TODO: verkopen jullie producten in de zaak? Zo ja: naam + prijs hier, anders deze regel weghalen]</span></p>
-          <a class="btn btn-primary" href="https://www.treatwell.nl/en/place/4men-barbershop/" rel="noopener">Boek een dienst<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="extra">Prijzen volgens Treatwell. Boek online of loop binnen aan de Goudsesingel.</p>
+          <a class="btn btn-primary" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Boek een dienst<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
@@ -451,7 +447,7 @@ a:hover { color: var(--color-accent-hover); }
           <p class="score-num">4,9</p>
           <p class="score-src">Treatwell</p>
           <p class="score-count">uit 1003 reviews</p>
-          <a href="https://www.treatwell.nl/en/place/4men-barbershop/reviews/" rel="noopener">Bekijk op Treatwell</a>
+          <a href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Bekijk op Treatwell</a>
         </div>
         <div class="score">
           <p class="score-num">5,0</p>
@@ -460,23 +456,9 @@ a:hover { color: var(--color-accent-hover); }
           <a href="https://www.google.com/maps/search/?api=1&amp;query=4MEN%20Barbershop%20Goudsesingel%20101%20Rotterdam" rel="noopener">Bekijk op Google</a>
         </div>
       </div>
-      <div class="quotes reveal">
-        <figure class="quote">
-          <blockquote><p><span class="todo">[TODO: review + voornaam klant]</span></p></blockquote>
-          <figcaption>[TODO: voornaam], via Treatwell</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote><p><span class="todo">[TODO: review + voornaam klant]</span></p></blockquote>
-          <figcaption>[TODO: voornaam], via Google</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote><p><span class="todo">[TODO: review + voornaam klant]</span></p></blockquote>
-          <figcaption>[TODO: voornaam], via Treatwell</figcaption>
-        </figure>
-      </div>
       <div class="reviews-foot">
-        <p>Stand 25 oktober 2026. <span class="todo">[TODO: scores bijwerken vlak voor livegang]</span></p>
-        <a class="btn btn-outline" href="https://www.treatwell.nl/en/place/4men-barbershop/reviews/" rel="noopener">Lees alle 1000+ reviews op Treatwell<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p>Stand 25 oktober 2026.</p>
+        <a class="btn btn-outline" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Lees alle 1000+ reviews op Treatwell<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </section>
@@ -492,7 +474,7 @@ a:hover { color: var(--color-accent-hover); }
           <img src="img/team-ras.webp" width="482" height="602" loading="lazy" decoding="async" alt="Portret van Ras, oprichter van 4MEN Barbershop">
           <h3>Ras</h3>
           <p class="role">Oprichter en barbier</p>
-          <p>Ras is barbier sinds 2003 en begon zijn vak in Oekraïne. In 2016 opende hij met drie collega's een barbershop in Kyiv, en daarna de zaak in Rotterdam <span class="todo">[TODO: sinds welk jaar in Rotterdam]</span>.</p>
+          <p>Ras is barbier sinds 2003 en begon zijn vak in Oekraïne. In 2016 opende hij met drie collega's een barbershop in Kyiv, en daarna de zaak in Rotterdam.</p>
         </article>
         <article class="member reveal">
           <img src="img/team-andrew.webp" width="637" height="796" loading="lazy" decoding="async" alt="Portret van Andrew, barbier bij 4MEN Barbershop">
@@ -555,7 +537,6 @@ a:hover { color: var(--color-accent-hover); }
         <a class="contact-btn" href="https://www.instagram.com/4men.barbershop.nl/" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-insta"/></svg><span><b>Instagram</b><small>@4men.barbershop.nl</small></span></a>
         <a class="contact-btn" href="mailto:4men.barbershop.nl@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span><b>E-mail</b><small>4men.barbershop.nl@gmail.com</small></span></a>
       </div>
-      <p class="note"><span class="todo">[TODO: eigen e-mailadres op het domein, bijvoorbeeld info@4menbarbershop.nl?]</span></p>
     </div>
   </section>
 
