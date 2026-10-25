@@ -115,6 +115,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 body {
   margin: 0;
@@ -287,7 +288,14 @@ a:hover { color: var(--color-accent-hover); }
 .hours tr.today th, .hours tr.today td { color: var(--color-accent); font-weight: 600; }
 .hours tr.today th::after { content: " · vandaag"; font-weight: 400; }
 .visit .btn { margin-top: 2rem; }
-.map { width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--color-border); background: var(--color-surface); filter: grayscale(0.4) contrast(1.05); }
+.map { position: relative; width: 100%; min-height: 24rem; border: 1px solid var(--color-border); background: var(--color-surface); overflow: hidden; }
+.map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.map-card { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 1rem; padding: 1.5rem; text-align: center;
+  background: radial-gradient(circle at 50% 42%, rgb(201 162 74 / 0.16), transparent 60%), var(--color-surface); }
+.map-card .icon { width: 2.5rem; height: 2.5rem; color: var(--color-accent); }
+.map-card p { font-family: var(--font-heading); font-size: var(--text-h3); line-height: 1.15; }
+.map-card small { color: var(--color-muted-foreground); font-size: var(--text-sm); max-width: 32ch; }
+.map-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
 @media (min-width: 60rem) {
   .visit-grid { grid-template-columns: 5fr 7fr; align-items: stretch; }
   .map { aspect-ratio: auto; height: 100%; min-height: 30rem; }
@@ -521,7 +529,17 @@ a:hover { color: var(--color-accent-hover); }
         </table>
         <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Goudsesingel%20101%2C%203031%20EE%20Rotterdam" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Route plannen</a>
       </div>
-      <iframe class="map" title="Kaart: 4MEN Barbershop, Goudsesingel 101 in Rotterdam" src="https://www.google.com/maps?q=Goudsesingel%20101%2C%203031%20EE%20Rotterdam&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="800" height="600"></iframe>
+      <div class="map" data-map>
+        <div class="map-card">
+          <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+          <p>Goudsesingel 101<br>3031 EE Rotterdam</p>
+          <div class="map-actions">
+            <button class="btn btn-primary" type="button" data-map-load>Kaart laden</button>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=4MEN%20Barbershop%2C%20Goudsesingel%20101%2C%203031%20EE%20Rotterdam" rel="noopener">Open in Google Maps</a>
+          </div>
+          <small>De kaart komt van Google Maps en laadt pas als je op de knop drukt.</small>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -562,7 +580,7 @@ a:hover { color: var(--color-accent-hover); }
         <a href="https://www.instagram.com/4men.barbershop.nl/" rel="noopener">Instagram: @4men.barbershop.nl</a>
       </address>
     </div>
-    <p class="privacy" id="privacy"><strong>Privacy.</strong> Deze site gebruikt zelf geen cookies, formulieren of statistieken. De ingesloten kaart komt van Google Maps; Google kan daarbij cookies plaatsen en gegevens verwerken volgens het eigen privacybeleid. Boek je via Treatwell, dan geldt het privacybeleid van Treatwell.</p>
+    <p class="privacy" id="privacy"><strong>Privacy.</strong> Deze site gebruikt zelf geen cookies, formulieren of statistieken. De kaart van Google Maps laadt pas als je op "Kaart laden" drukt; Google kan daarbij cookies plaatsen en gegevens verwerken volgens het eigen privacybeleid. Boek je via Treatwell, dan geldt het privacybeleid van Treatwell.</p>
     <div class="legal">
       <span>© <span data-year>2026</span> 4MEN Barbershop</span>
       <a href="#top">Terug naar boven</a>
@@ -594,6 +612,19 @@ a:hover { color: var(--color-accent-hover); }
     if (row) row.classList.add("today");
   }
   document.querySelector("[data-year]").textContent = new Date().getFullYear();
+
+  // Google Maps loads only on request
+  var mapBtn = document.querySelector("[data-map-load]");
+  if (mapBtn) mapBtn.addEventListener("click", function () {
+    var f = document.createElement("iframe");
+    f.title = "Kaart: 4MEN Barbershop, Goudsesingel 101 in Rotterdam";
+    f.src = "https://maps.google.com/maps?q=Goudsesingel%20101%2C%203031%20EE%20Rotterdam&z=16&output=embed";
+    f.loading = "lazy";
+    f.referrerPolicy = "no-referrer-when-downgrade";
+    f.allowFullscreen = true;
+    document.querySelector("[data-map]").appendChild(f);
+    mapBtn.closest(".map-card").hidden = true;
+  });
 
   // Section entrances, once
   if (!("IntersectionObserver" in window)) {
