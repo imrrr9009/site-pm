@@ -182,7 +182,8 @@ button { font: inherit; color: inherit; }
   transition: background-color 300ms var(--ease), border-color 300ms var(--ease);
   border-bottom: 1px solid transparent;
 }
-.site-header.is-solid { background: rgb(15 13 12 / 0.94); border-bottom-color: var(--line); }
+.site-header, .js .site-header.is-solid { background: rgb(15 13 12 / 0.94); border-bottom-color: var(--line); }
+.js .site-header:not(.is-solid) { background: transparent; border-bottom-color: transparent; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: var(--header-h); }
 .logo { display: inline-flex; align-items: baseline; gap: 0.5rem; text-decoration: none; white-space: nowrap; }
 .logo b { font-family: var(--serif); font-size: 1.9rem; font-weight: 700; letter-spacing: 0.04em; }
@@ -282,11 +283,29 @@ button { font: inherit; color: inherit; }
 
 /* Products */
 .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
-.filters button { min-height: 2.75rem; padding: 0.55rem 1.1rem; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: var(--t-sm); font-weight: 600; transition: background-color 250ms var(--ease), color 250ms var(--ease), border-color 250ms var(--ease); }
-.filters button span { color: var(--fg-dim); font-weight: 500; margin-left: 0.25rem; }
-.filters button:hover { border-color: var(--accent); }
-.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.filters button[aria-pressed="true"] span { color: var(--on-accent); }
+.pf { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
+.filters label { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.55rem 1.1rem; border: 1px solid var(--line); cursor: pointer; font-size: var(--t-sm); font-weight: 600; user-select: none; -webkit-tap-highlight-color: transparent; transition: background-color 250ms var(--ease), color 250ms var(--ease), border-color 250ms var(--ease); }
+.filters label span { color: var(--fg-dim); font-weight: 500; margin-left: 0.35rem; }
+.filters label:hover { border-color: var(--accent); }
+#pf-alle:checked ~ .filters label[for="pf-alle"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+#pf-alle:checked ~ .filters label[for="pf-alle"] span { color: var(--on-accent); }
+#pf-alle:focus-visible ~ .filters label[for="pf-alle"] { outline: 2px solid var(--accent); outline-offset: 3px; }
+#pf-styling:checked ~ .filters label[for="pf-styling"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+#pf-styling:checked ~ .filters label[for="pf-styling"] span { color: var(--on-accent); }
+#pf-styling:focus-visible ~ .filters label[for="pf-styling"] { outline: 2px solid var(--accent); outline-offset: 3px; }
+#pf-haar:checked ~ .filters label[for="pf-haar"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+#pf-haar:checked ~ .filters label[for="pf-haar"] span { color: var(--on-accent); }
+#pf-haar:focus-visible ~ .filters label[for="pf-haar"] { outline: 2px solid var(--accent); outline-offset: 3px; }
+#pf-baard:checked ~ .filters label[for="pf-baard"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+#pf-baard:checked ~ .filters label[for="pf-baard"] span { color: var(--on-accent); }
+#pf-baard:focus-visible ~ .filters label[for="pf-baard"] { outline: 2px solid var(--accent); outline-offset: 3px; }
+#pf-scheren:checked ~ .filters label[for="pf-scheren"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+#pf-scheren:checked ~ .filters label[for="pf-scheren"] span { color: var(--on-accent); }
+#pf-scheren:focus-visible ~ .filters label[for="pf-scheren"] { outline: 2px solid var(--accent); outline-offset: 3px; }
+#pf-styling:checked ~ .product-grid .product:not([data-cat="styling"]) { display: none; }
+#pf-haar:checked ~ .product-grid .product:not([data-cat="haar"]) { display: none; }
+#pf-baard:checked ~ .product-grid .product:not([data-cat="baard"]) { display: none; }
+#pf-scheren:checked ~ .product-grid .product:not([data-cat="scheren"]) { display: none; }
 .product-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.75rem, 3vw, 2.5rem) clamp(0.75rem, 2vw, 1.5rem); }
 .product { display: grid; align-content: start; gap: 0.4rem; animation: fade 500ms var(--ease-out) both; }
 .product-img { aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; background: #f9f5ea; margin-bottom: 0.75rem; }
@@ -307,9 +326,9 @@ button { font: inherit; color: inherit; }
 .product.is-featured .product-img { aspect-ratio: 8 / 7; }
 .product.is-featured .product-img img { object-fit: contain; }
 .product.is-featured h3 { font-size: var(--t-h3); }
-.product-grid.is-filtered .is-featured { grid-column: auto; grid-row: auto; }
-.product-grid.is-filtered .is-featured .product-img { aspect-ratio: 4 / 5; }
-.product-grid.is-filtered .is-featured .product-img img { object-fit: cover; }
+.pf:not(#pf-alle):checked ~ .product-grid .is-featured { grid-column: auto; grid-row: auto; }
+.pf:not(#pf-alle):checked ~ .product-grid .is-featured .product-img { aspect-ratio: 4 / 5; }
+.pf:not(#pf-alle):checked ~ .product-grid .is-featured .product-img img { object-fit: cover; }
 @media (min-width: 48rem) {
   .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .product.is-featured { grid-row: span 2; }
@@ -348,7 +367,6 @@ button { font: inherit; color: inherit; }
 .member p:not(.role) { color: var(--fg-dim); margin-top: 0.9rem; max-width: 40ch; }
 @media (min-width: 48rem) {
   .team-grid { grid-template-columns: 1fr 1fr; }
-  .member:nth-child(2) { margin-top: clamp(4rem, 10vw, 9rem); }
 }
 
 /* Reviews */
@@ -376,9 +394,9 @@ button { font: inherit; color: inherit; }
   grid-template-areas: "trim trim" "chair cut" "fade cut" "lounge lounge";
 }
 .gallery li { overflow: hidden; background: var(--surface-2); }
-.gallery button { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; }
+.gallery a { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; }
 .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 800ms var(--ease-out), filter 400ms var(--ease); filter: brightness(0.9); }
-.gallery button:hover img, .gallery button:focus-visible img { transform: scale(1.06); filter: brightness(1); }
+.gallery a:hover img, .gallery a:focus-visible img { transform: scale(1.06); filter: brightness(1); }
 .g-trim { grid-area: trim; } .g-chair { grid-area: chair; } .g-cut { grid-area: cut; }
 .g-fade { grid-area: fade; } .g-lounge { grid-area: lounge; }
 @media (min-width: 52rem) {
@@ -449,8 +467,8 @@ button { font: inherit; color: inherit; }
 
 /* Mobile booking bar */
 .mbar { position: fixed; inset: auto 0 0; z-index: 60; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 1px; background: var(--line);
-  padding-bottom: env(safe-area-inset-bottom, 0px); transform: translateY(110%); transition: transform 400ms var(--ease-out); }
-.mbar.is-on { transform: none; }
+  padding-bottom: env(safe-area-inset-bottom, 0px); transition: transform 400ms var(--ease-out); }
+.js .mbar:not(.is-on) { transform: translateY(110%); }
 .mbar a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3.5rem; background: var(--ink-900); text-decoration: none; font-size: var(--t-sm); font-weight: 600; }
 .mbar a:first-child { background: var(--accent); color: var(--on-accent); }
 @media (min-width: 62rem) { .mbar { display: none; } }
@@ -604,12 +622,17 @@ button { font: inherit; color: inherit; }
         </div>
         <p class="lead">Haar- en baardproducten met het 4MEN-label, te koop in de zaak. Vraag je barber welk product bij jouw haar past.</p>
       </div>
+      <input class="pf" type="radio" name="productfilter" id="pf-alle" checked>
+      <input class="pf" type="radio" name="productfilter" id="pf-styling">
+      <input class="pf" type="radio" name="productfilter" id="pf-haar">
+      <input class="pf" type="radio" name="productfilter" id="pf-baard">
+      <input class="pf" type="radio" name="productfilter" id="pf-scheren">
       <div class="filters" role="group" aria-label="Filter producten">
-        <button type="button" aria-pressed="true" data-filter="alle">Alle <span>13</span></button>
-        <button type="button" aria-pressed="false" data-filter="styling">Styling <span>5</span></button>
-        <button type="button" aria-pressed="false" data-filter="haar">Haarverzorging <span>2</span></button>
-        <button type="button" aria-pressed="false" data-filter="baard">Baard <span>4</span></button>
-        <button type="button" aria-pressed="false" data-filter="scheren">Scheren <span>2</span></button>
+        <label for="pf-alle">Alle <span>13</span></label>
+        <label for="pf-styling">Styling <span>5</span></label>
+        <label for="pf-haar">Haarverzorging <span>2</span></label>
+        <label for="pf-baard">Baard <span>4</span></label>
+        <label for="pf-scheren">Scheren <span>2</span></label>
       </div>
       <ul class="product-grid" data-products>
           <li class="product is-featured" data-cat="styling">
@@ -794,11 +817,11 @@ button { font: inherit; color: inherit; }
         <p class="lead">Een kijkje in de zaak. Tik op een foto om hem groter te zien.</p>
       </div>
       <ul class="gallery" data-reveal>
-        <li class="g-trim"><button type="button" data-zoom><img src="img/foto-ras-baard.webp" width="506" height="337" loading="lazy" decoding="async" alt="Ras trimt met kam en tondeuse de baard van een klant bij 4MEN Barbershop"></button></li>
-        <li class="g-chair"><button type="button" data-zoom><img src="img/foto-stoel.webp" width="222" height="314" loading="lazy" decoding="async" alt="Klassieke lichtblauwe barberstoel voor een spiegel in 4MEN Barbershop"></button></li>
-        <li class="g-cut"><button type="button" data-zoom><img src="img/foto-andrew-knipt.webp" width="176" height="314" loading="lazy" decoding="async" alt="Andrew knipt het haar van een klant met schaar en kam"></button></li>
-        <li class="g-lounge"><button type="button" data-zoom><img src="img/foto-wachtruimte.webp" width="506" height="350" loading="lazy" decoding="async" alt="Wachtruimte met gestreepte fauteuils, een grote wandklok en een rode vitrinekast"></button></li>
-        <li class="g-fade"><button type="button" data-zoom><img src="img/foto-fade.webp" width="235" height="314" loading="lazy" decoding="async" alt="Fade-kapsel met strakke overgang bij 4MEN Barbershop in Rotterdam"></button></li>
+        <li class="g-trim"><a href="img/foto-ras-baard.webp" data-zoom><img src="img/foto-ras-baard.webp" width="506" height="337" loading="lazy" decoding="async" alt="Ras trimt met kam en tondeuse de baard van een klant bij 4MEN Barbershop"></a></li>
+        <li class="g-chair"><a href="img/foto-stoel.webp" data-zoom><img src="img/foto-stoel.webp" width="222" height="314" loading="lazy" decoding="async" alt="Klassieke lichtblauwe barberstoel voor een spiegel in 4MEN Barbershop"></a></li>
+        <li class="g-cut"><a href="img/foto-andrew-knipt.webp" data-zoom><img src="img/foto-andrew-knipt.webp" width="176" height="314" loading="lazy" decoding="async" alt="Andrew knipt het haar van een klant met schaar en kam"></a></li>
+        <li class="g-lounge"><a href="img/foto-wachtruimte.webp" data-zoom><img src="img/foto-wachtruimte.webp" width="506" height="350" loading="lazy" decoding="async" alt="Wachtruimte met gestreepte fauteuils, een grote wandklok en een rode vitrinekast"></a></li>
+        <li class="g-fade"><a href="img/foto-fade.webp" data-zoom><img src="img/foto-fade.webp" width="235" height="314" loading="lazy" decoding="async" alt="Fade-kapsel met strakke overgang bij 4MEN Barbershop in Rotterdam"></a></li>
       </ul>
     </div>
     <dialog class="lightbox" data-lightbox aria-label="Foto vergroot">
@@ -948,21 +971,12 @@ button { font: inherit; color: inherit; }
     a.addEventListener("focus", show);
   });
 
-  // Product filter
-  $$("[data-filter]").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var f = b.dataset.filter;
-      $$("[data-filter]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
-      $$(".product").forEach(function (p) { p.hidden = f !== "alle" && p.dataset.cat !== f; });
-      $("[data-products]").classList.toggle("is-filtered", f !== "alle");
-    });
-  });
-
   // Lightbox
   var box = $("[data-lightbox]");
   if (box && typeof box.showModal === "function") {
     $$("[data-zoom]").forEach(function (b) {
-      b.addEventListener("click", function () {
+      b.addEventListener("click", function (e) {
+        e.preventDefault();
         var img = b.querySelector("img");
         $("[data-lightbox-img]").src = img.src;
         $("[data-lightbox-img]").alt = img.alt;
