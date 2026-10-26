@@ -280,6 +280,43 @@ button { font: inherit; color: inherit; }
   .service-photo { display: block; position: sticky; top: calc(var(--header-h) + 2rem); }
 }
 
+/* Products */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
+.filters button { min-height: 2.75rem; padding: 0.55rem 1.1rem; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: var(--t-sm); font-weight: 600; transition: background-color 250ms var(--ease), color 250ms var(--ease), border-color 250ms var(--ease); }
+.filters button span { color: var(--fg-dim); font-weight: 500; margin-left: 0.25rem; }
+.filters button:hover { border-color: var(--accent); }
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.filters button[aria-pressed="true"] span { color: var(--on-accent); }
+.product-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.75rem, 3vw, 2.5rem) clamp(0.75rem, 2vw, 1.5rem); }
+.product { display: grid; align-content: start; gap: 0.4rem; animation: fade 500ms var(--ease-out) both; }
+.product-img { aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; background: #f9f5ea; margin-bottom: 0.75rem; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-out); }
+.product:hover .product-img img { transform: scale(1.05); }
+.product h3 { font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.875rem); line-height: 1.05; }
+.product-meta { color: var(--accent); font-size: var(--t-sm); font-weight: 600; }
+.product p:not(.product-meta) { color: var(--fg-dim); font-size: var(--t-sm); line-height: 1.5; }
+.product details { margin-top: 0.25rem; font-size: var(--t-sm); }
+.product summary { cursor: pointer; padding-block: 0.6rem; font-weight: 600; color: var(--fg); list-style: none; display: inline-flex; align-items: center; gap: 0.4rem; }
+.product summary::-webkit-details-marker { display: none; }
+.product summary::after { content: "+"; color: var(--accent); font-size: 1.1em; transition: transform 250ms var(--ease); }
+.product details[open] summary::after { transform: rotate(45deg); }
+.product details p { font-size: 0.8125rem !important; }
+.products-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); padding-top: 2rem; border-top: 1px solid var(--line); color: var(--fg-dim); }
+.products-foot p { max-width: 52ch; }
+.product.is-featured { grid-column: span 2; }
+.product.is-featured .product-img { aspect-ratio: 8 / 7; }
+.product.is-featured .product-img img { object-fit: contain; }
+.product.is-featured h3 { font-size: var(--t-h3); }
+.product-grid.is-filtered .is-featured { grid-column: auto; grid-row: auto; }
+.product-grid.is-filtered .is-featured .product-img { aspect-ratio: 4 / 5; }
+.product-grid.is-filtered .is-featured .product-img img { object-fit: cover; }
+@media (min-width: 48rem) {
+  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .product.is-featured { grid-row: span 2; }
+  .product.is-featured .product-img { aspect-ratio: 4 / 5; }
+}
+@media (min-width: 72rem) { .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
 /* Story */
 .story-head { display: grid; gap: 1.5rem; margin-bottom: clamp(3rem, 6vw, 5rem); }
 .timeline { list-style: none; padding: 0; display: grid; gap: 0; position: relative; }
@@ -455,6 +492,7 @@ button { font: inherit; color: inherit; }
     <div class="header-right">
       <nav class="nav" aria-label="Secties">
         <a href="#diensten">Diensten</a>
+        <a href="#producten">Producten</a>
         <a href="#verhaal">Verhaal</a>
         <a href="#team">Team</a>
         <a href="#reviews">Reviews</a>
@@ -481,7 +519,7 @@ button { font: inherit; color: inherit; }
             <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
             <u>4,9 uit 1000+ reviews</u>
           </a>
-          <p class="lead">Vakmanschap sinds 2003, aan de Goudsesingel. Knippen, baard en hot towel shave door barbiers die hun vak leerden in Oekraïne.</p>
+          <p class="lead">Vakmanschap sinds 2003, aan de Goudsesingel. Knippen, baard en hot towel shave door barbers die hun vak leerden in Oekraïne.</p>
           <div class="hero-actions">
             <a class="btn btn-gold" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><span>Boek je knipbeurt</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn-line" href="https://wa.me/31648351081" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span>App ons</span></a>
@@ -508,10 +546,10 @@ button { font: inherit; color: inherit; }
       <div data-reveal>
         <p class="label">4MEN Barbershop</p>
         <h2 class="h2" id="intro-titel" style="margin-top:1.25rem">Vakmanschap <em>sinds 2003</em></h2>
-        <p class="statement">Een barbier in Rotterdam die het vak leerde in Oekraïne, een zaak opende in Kyiv en nu elke dag knipt aan de Goudsesingel.</p>
+        <p class="statement">Een barber in Rotterdam die het vak leerde in Oekraïne, een zaak opende in Kyiv en nu elke dag knipt aan de Goudsesingel.</p>
       </div>
       <div class="counters" data-reveal style="--d:120ms">
-        <div class="counter"><strong data-count="2003" data-dec="0">2003</strong><span>barbier sinds</span></div>
+        <div class="counter"><strong data-count="2003" data-dec="0">2003</strong><span>barber sinds</span></div>
         <div class="counter"><strong data-count="4.9" data-dec="1">4,9</strong><span>op Treatwell, 1003 reviews</span></div>
         <div class="counter"><strong data-count="5.0" data-dec="1">5,0</strong><span>op Google, 275 reviews</span></div>
         <div class="counter"><strong data-count="7" data-dec="0">7</strong><span>dagen per week open</span></div>
@@ -557,6 +595,122 @@ button { font: inherit; color: inherit; }
     </div>
   </section>
 
+  <section class="section products" id="producten" aria-labelledby="producten-titel">
+    <div class="wrap">
+      <div class="services-head" data-reveal>
+        <div>
+          <p class="label">Eigen lijn</p>
+          <h2 class="h2" id="producten-titel" style="margin-top:1.25rem">Producten <em>van 4MEN</em></h2>
+        </div>
+        <p class="lead">Haar- en baardproducten met het 4MEN-label, te koop in de zaak. Vraag je barber welk product bij jouw haar past.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter producten">
+        <button type="button" aria-pressed="true" data-filter="alle">Alle <span>13</span></button>
+        <button type="button" aria-pressed="false" data-filter="styling">Styling <span>5</span></button>
+        <button type="button" aria-pressed="false" data-filter="haar">Haarverzorging <span>2</span></button>
+        <button type="button" aria-pressed="false" data-filter="baard">Baard <span>4</span></button>
+        <button type="button" aria-pressed="false" data-filter="scheren">Scheren <span>2</span></button>
+      </div>
+      <ul class="product-grid" data-products>
+          <li class="product is-featured" data-cat="styling">
+            <div class="product-img"><img src="img/producten/matte-pomade.webp" width="600" height="750" loading="lazy" decoding="async" alt="Matte Pomade van 4MEN Barbershop, 80 g"></div>
+            <h3>Matte Pomade</h3>
+            <p class="product-meta">80 g · prijs in de zaak</p>
+            <p>Sterke hold met een natuurlijke, matte look.</p>
+            <details><summary>Ingrediënten</summary><p>Water, Cera Alba, Cocos Nucifera (Coconut) Oil, Ceteareth-25, Bentonite, PVP, Glycol Distearate, Castor Oil, Oleth-5, Caramel, Carnauba Acid Wax, CI 19140, CI 15985, Fragrance.</p></details>
+          </li>
+          <li class="product" data-cat="styling">
+            <div class="product-img"><img src="img/producten/matte-paste.webp" width="600" height="750" loading="lazy" decoding="async" alt="Matte Paste van 4MEN Barbershop, 80 g"></div>
+            <h3>Matte Paste</h3>
+            <p class="product-meta">80 g · prijs in de zaak</p>
+            <p>Sterke hold met een natuurlijke, matte look.</p>
+            <details><summary>Ingrediënten</summary><p>Water, Petrolatum, Glyceryl Stearate, Ceteareth-25, Kaolin, Argan Oil, Cetearyl Emulsifiers, Propylene Glycol, Ceresin, PVP, PEG-40 Hydrogenated Castor Oil, Volcanic Soil, DMDM Hydantoin, Parfume.</p></details>
+          </li>
+          <li class="product" data-cat="styling">
+            <div class="product-img"><img src="img/producten/strong-hold-pomade.webp" width="600" height="750" loading="lazy" decoding="async" alt="Strong Hold Hair Pomade van 4MEN Barbershop, 150 ml"></div>
+            <h3>Strong Hold Hair Pomade</h3>
+            <p class="product-meta">150 ml · prijs in de zaak</p>
+            <p>Sterke hold met een hoogglans finish.</p>
+            <details><summary>Ingrediënten</summary><p>Aqua, Beeswax, Styrene-Acrylates Copolymer, Menthyl Lactate, Argan Oil, PEG-40 Hydrogenated Castor Oil, Ocimum Americanum Leaf Oil, Parfume.</p></details>
+          </li>
+          <li class="product" data-cat="styling">
+            <div class="product-img"><img src="img/producten/styling-powder.webp" width="600" height="750" loading="lazy" decoding="async" alt="Styling Powder van 4MEN Barbershop, 25 g"></div>
+            <h3>Styling Powder</h3>
+            <p class="product-meta">25 g · prijs in de zaak</p>
+            <p>Maximaal volume en een sterke hold.</p>
+            <details><summary>Ingrediënten</summary><p>Corn Starch Modified, Silica, Fragrance, Hydroxyacetophenone, Phenoxyethanol, Ethylhexylglycerin.</p></details>
+          </li>
+          <li class="product" data-cat="styling">
+            <div class="product-img"><img src="img/producten/sea-salt-spray.webp" width="600" height="750" loading="lazy" decoding="async" alt="Sea Salt Spray van 4MEN Barbershop, 250 ml"></div>
+            <h3>Sea Salt Spray</h3>
+            <p class="product-meta">250 ml · prijs in de zaak</p>
+            <p>Geeft textuur en body, voor een beach look.</p>
+            <details><summary>Ingrediënten</summary><p>Water, VP/Acrylates/Lauryl Methacrylate Copolymer, PEG-12 Dimethicone, Parfume, PPG-26-Buteth-26, PEG-40 Hydrogenated Castor Oil.</p></details>
+          </li>
+          <li class="product" data-cat="haar">
+            <div class="product-img"><img src="img/producten/hair-shampoo.webp" width="600" height="750" loading="lazy" decoding="async" alt="Hair Shampoo van 4MEN Barbershop, 268 ml"></div>
+            <h3>Hair Shampoo</h3>
+            <p class="product-meta">268 ml · prijs in de zaak</p>
+            <p>Tegen vet haar; brengt vocht en talg van de hoofdhuid in balans.</p>
+            <details><summary>Ingrediënten</summary><p>Water, Palm Kernelamide DEA, Cocamide MEA, Fragrance, Dimethicone, Mentholum, Cocamidopropyl Betaine, Carbomer, Glycol Distearate, Sodium Chloride, Glycerin, Sodium Benzoate, Citric Acid, Melaleuca Alternifolia (Tea Tree) Leaf Oil, CI 19140, CI 42090.</p></details>
+          </li>
+          <li class="product" data-cat="haar">
+            <div class="product-img"><img src="img/producten/hair-conditioner.webp" width="600" height="750" loading="lazy" decoding="async" alt="Hair Conditioner van 4MEN Barbershop, 250 ml"></div>
+            <h3>Hair Conditioner</h3>
+            <p class="product-meta">250 ml · prijs in de zaak</p>
+            <p>Maakt het haar zacht en gehydrateerd, minder ruw.</p>
+            <details><summary>Ingrediënten</summary><p>Water, Cetearyl Alcohol, Steartrimonium Chloride, Lauric/Myristic/Palmitic/Stearic Glycerides, Hydroxyethylcellulose, Glyceryl Stearate, Fragrance, Benzyl Alcohol, Silicone Quaternium-12, Lauryl Glucoside, Melaleuca Alternifolia (Tea Tree) Leaf Oil, Methylchloroisothiazolinone, CI 19140, CI 42090, Methylisothiazolinone.</p></details>
+          </li>
+          <li class="product" data-cat="baard">
+            <div class="product-img"><img src="img/producten/beard-wash.webp" width="600" height="750" loading="lazy" decoding="async" alt="Beard Wash van 4MEN Barbershop, 250 ml"></div>
+            <h3>Beard Wash</h3>
+            <p class="product-meta">250 ml · prijs in de zaak</p>
+            <p>Voor elk type baard: reinigt en hydrateert.</p>
+            <details><summary>Ingrediënten</summary><p>Water, Sodium Laureth Sulfate, Cocamidopropyl Betaine, Dimethicone, Fragrance, Sodium Chloride, Cetearyl Alcohol, Sodium Benzoate, Polyquaternium-10, Silicone Quaternium-12, Guar Hydroxypropyltrimonium Chloride, Polyquaternium-7, Lauryl Glucoside, Cocamidopropyl PG-Dimonium Chloride, Artemisia Argyi Leaf Extract, Saponins, Glycyrrhetinic Acid, Hydrolyzed Keratin, Keratin, Phenoxyethanol, Oxidized Keratin.</p></details>
+          </li>
+          <li class="product" data-cat="baard">
+            <div class="product-img"><img src="img/producten/beard-oil.webp" width="600" height="750" loading="lazy" decoding="async" alt="Beard Oil van 4MEN Barbershop, 30 ml"></div>
+            <h3>Beard Oil</h3>
+            <p class="product-meta">30 ml · prijs in de zaak</p>
+            <p>Hydrateert en verzorgt baard en huid.</p>
+            <details><summary>Ingrediënten</summary><p>Tea Tree Oil, Grape Seed Oil, Jojoba Oil, Argan Oil, Vitamin E, Olea Europaea (Olive) Fruit Oil, Tocopheryl Acetate, Parfume.</p></details>
+          </li>
+          <li class="product" data-cat="baard">
+            <div class="product-img"><img src="img/producten/beard-serum.webp" width="600" height="750" loading="lazy" decoding="async" alt="Beard Serum van 4MEN Barbershop, 30 ml"></div>
+            <h3>Beard Serum</h3>
+            <p class="product-meta">30 ml · prijs in de zaak</p>
+            <p>Houdt de baard zacht, glanzend en glad.</p>
+            <details><summary>Ingrediënten</summary><p>Water, Glycerin, Dimethicone, Carbomer, Phenoxyethanol, Methylparaben, Simmondsia Chinensis (Jojoba) Seed Oil, Butyrospermum Parkii (Shea) Butter, Fragrance.</p></details>
+          </li>
+          <li class="product" data-cat="baard">
+            <div class="product-img"><img src="img/producten/beard-balm.webp" width="600" height="750" loading="lazy" decoding="async" alt="Beard Balm van 4MEN Barbershop, 60 g"></div>
+            <h3>Beard Balm</h3>
+            <p class="product-meta">60 g · prijs in de zaak</p>
+            <p>Hydraterend, met natuurlijke ingrediënten.</p>
+            <details><summary>Ingrediënten</summary><p>Olea Europaea Fruit Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Macadamia Oil, Polybutene, Ceresin, Bees Wax, Butyrospermum Parkii, Cocoa Butter, Microcrystalline Wax, Carnauba Wax, Candelilla Wax, Titanium Dioxide, Parfum, Tocopheryl Acetate.</p></details>
+          </li>
+          <li class="product" data-cat="scheren">
+            <div class="product-img"><img src="img/producten/shaving-gel.webp" width="600" height="750" loading="lazy" decoding="async" alt="Shaving Gel van 4MEN Barbershop, 250 ml"></div>
+            <h3>Shaving Gel</h3>
+            <p class="product-meta">250 ml · prijs in de zaak</p>
+            <p>Hydrateert en voorkomt huidirritatie.</p>
+            <details><summary>Ingrediënten</summary><p>Water, Glycerin, Propylene Glycol, Carbomer, PEG-40 Hydrogenated Castor Oil, Phenoxyethanol, Methylparaben, Aminomethyl Propanol, Allantoin, Fragrance.</p></details>
+          </li>
+          <li class="product" data-cat="scheren">
+            <div class="product-img"><img src="img/producten/after-shave.webp" width="600" height="750" loading="lazy" decoding="async" alt="After Shave van 4MEN Barbershop, 60 g"></div>
+            <h3>After Shave</h3>
+            <p class="product-meta">60 g · prijs in de zaak</p>
+            <p>Kalmeert de huid met een verkoelend gevoel.</p>
+            <details><summary>Ingrediënten</summary><p>Water, Argan Oil, Caprylic/Capric Triglyceride, Vitamin E, Cetearyl Glucoside, Carrageenan, Xanthan Gum, Allantoin, Perfume.</p></details>
+          </li>
+      </ul>
+      <div class="products-foot">
+        <p>Alle producten zijn verkrijgbaar aan de Goudsesingel 101. Vraag ernaar bij je afspraak, of app ons om iets apart te laten leggen.</p>
+        <a class="btn btn-line" href="https://wa.me/31648351081" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span>App over een product</span></a>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="verhaal" aria-labelledby="verhaal-titel">
     <div class="wrap">
       <div class="story-head" data-reveal>
@@ -567,7 +721,7 @@ button { font: inherit; color: inherit; }
         <li class="step" data-reveal>
           <p class="year">2003</p>
           <h3>Oekraïne</h3>
-          <p>Ras pakt de schaar en de tondeuse op en begint als barbier in Oekraïne.</p>
+          <p>Ras pakt de schaar en de tondeuse op en begint als barber in Oekraïne.</p>
         </li>
         <li class="step" data-reveal style="--d:120ms">
           <p class="year">2016</p>
@@ -587,7 +741,7 @@ button { font: inherit; color: inherit; }
     <div class="wrap">
       <div data-reveal>
         <p class="label">Het team</p>
-        <h2 class="h2" id="team-titel" style="margin-top:1.25rem">De <em>barbiers</em></h2>
+        <h2 class="h2" id="team-titel" style="margin-top:1.25rem">De <em>barbers</em></h2>
       </div>
       <div class="team-grid">
         <article class="member" data-reveal>
@@ -595,15 +749,15 @@ button { font: inherit; color: inherit; }
           <div>
             <h3 class="name">Ras</h3>
             <p class="role">Oprichter</p>
-            <p>Barbier sinds 2003, begonnen in Oekraïne. Opende in 2016 met drie collega's een barbershop in Kyiv, en daarna de zaak in Rotterdam.</p>
+            <p>Barber sinds 2003, begonnen in Oekraïne. Opende in 2016 met drie collega's een barbershop in Kyiv, en daarna de zaak in Rotterdam.</p>
           </div>
         </article>
         <article class="member" data-reveal style="--d:120ms">
-          <div class="photo"><img src="img/team-andrew.webp" width="637" height="796" loading="lazy" decoding="async" alt="Portret van Andrew, barbier bij 4MEN Barbershop"></div>
+          <div class="photo"><img src="img/team-andrew.webp" width="637" height="796" loading="lazy" decoding="async" alt="Portret van Andrew, barber bij 4MEN Barbershop"></div>
           <div>
             <h3 class="name">Andrew</h3>
-            <p class="role">Barbier</p>
-            <p>Begon op zijn 21e als barbier. Werkte in Kyiv en Athene, en knipt nu in Rotterdam.</p>
+            <p class="role">Barber</p>
+            <p>Begon op zijn 21e als barber. Werkte in Kyiv en Athene, en knipt nu in Rotterdam.</p>
           </div>
         </article>
       </div>
@@ -641,7 +795,7 @@ button { font: inherit; color: inherit; }
       </div>
       <ul class="gallery" data-reveal>
         <li class="g-trim"><button type="button" data-zoom><img src="img/foto-ras-baard.webp" width="506" height="337" loading="lazy" decoding="async" alt="Ras trimt met kam en tondeuse de baard van een klant bij 4MEN Barbershop"></button></li>
-        <li class="g-chair"><button type="button" data-zoom><img src="img/foto-stoel.webp" width="222" height="314" loading="lazy" decoding="async" alt="Klassieke lichtblauwe barbierstoel voor een spiegel in 4MEN Barbershop"></button></li>
+        <li class="g-chair"><button type="button" data-zoom><img src="img/foto-stoel.webp" width="222" height="314" loading="lazy" decoding="async" alt="Klassieke lichtblauwe barberstoel voor een spiegel in 4MEN Barbershop"></button></li>
         <li class="g-cut"><button type="button" data-zoom><img src="img/foto-andrew-knipt.webp" width="176" height="314" loading="lazy" decoding="async" alt="Andrew knipt het haar van een klant met schaar en kam"></button></li>
         <li class="g-lounge"><button type="button" data-zoom><img src="img/foto-wachtruimte.webp" width="506" height="350" loading="lazy" decoding="async" alt="Wachtruimte met gestreepte fauteuils, een grote wandklok en een rode vitrinekast"></button></li>
         <li class="g-fade"><button type="button" data-zoom><img src="img/foto-fade.webp" width="235" height="314" loading="lazy" decoding="async" alt="Fade-kapsel met strakke overgang bij 4MEN Barbershop in Rotterdam"></button></li>
@@ -706,7 +860,7 @@ button { font: inherit; color: inherit; }
   <section class="jobs" id="werken" aria-labelledby="werken-titel">
     <div class="wrap">
       <h2 id="werken-titel">Werken bij 4MEN</h2>
-      <p>Ervaren barbier? <a href="https://wa.me/31648351081" rel="noopener">App ons je cv.</a></p>
+      <p>Ervaren barber? <a href="https://wa.me/31648351081" rel="noopener">App ons je cv.</a></p>
     </div>
   </section>
 </main>
@@ -792,6 +946,16 @@ button { font: inherit; color: inherit; }
     }
     a.addEventListener("mouseenter", show);
     a.addEventListener("focus", show);
+  });
+
+  // Product filter
+  $$("[data-filter]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var f = b.dataset.filter;
+      $$("[data-filter]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+      $$(".product").forEach(function (p) { p.hidden = f !== "alle" && p.dataset.cat !== f; });
+      $("[data-products]").classList.toggle("is-filtered", f !== "alle");
+    });
   });
 
   // Lightbox
