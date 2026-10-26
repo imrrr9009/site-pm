@@ -2,8 +2,8 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- DEMO: verwijder deze regel pas als de eigenaar akkoord is en de site live gaat op 4menbarbershop.nl -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Verwijder deze regel pas als de site live gaat op 4menbarbershop.nl -->
 <meta name="robots" content="noindex">
 <title>Barbershop Rotterdam | 4MEN Barbershop Goudsesingel</title>
 <meta name="description" content="Barbershop aan de Goudsesingel in Rotterdam. Knippen, baard trimmen en hot towel shave. ★ 4,9 uit 1000+ reviews. Elke dag open, boek direct online.">
@@ -14,11 +14,11 @@
 <meta property="og:description" content="Knippen, baard en hot towel shave aan de Goudsesingel. ★ 4,9 uit 1000+ reviews.">
 <meta property="og:image" content="https://www.4menbarbershop.nl/img/og.jpg">
 <meta property="og:locale" content="nl_NL">
-<meta name="theme-color" content="#141110">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141110'/%3E%3Ctext x='16' y='24' font-family='serif' font-size='22' font-weight='700' fill='%23c9a24a' text-anchor='middle'%3E4%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0f0d0c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f0d0c'/%3E%3Ctext x='16' y='24' font-family='serif' font-size='22' font-weight='700' fill='%23c9a24a' text-anchor='middle'%3E4%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/hero.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="img/foto-ras-baard.webp" as="image" type="image/webp" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,46 +72,45 @@
   src: url(fonts/montserrat-latin.woff2) format("woff2");
 }
 
+/* Layout: cinematic dark page, one gold accent, big serif statements against small sans text */
 :root {
   color-scheme: dark;
-  /* primitive */
-  --stone-950: #141110;
-  --stone-900: #1c1816;
-  --stone-800: #27221f;
-  --stone-700: #3a332e;
-  --cream-50: #f3ede4;
-  --cream-300: #c9bfb1;
-  --gold-400: #d4ad55;
-  --gold-500: #c9a24a;
-  --gold-600: #b38b34;
-  --todo: #f3dc8a;
+  --ink-950: #0f0d0c;
+  --ink-900: #171412;
+  --ink-850: #1e1a17;
+  --ink-800: #27221e;
+  --cream: #f4eee5;
+  --cream-dim: #c9bfb1;
+  --gold: #c9a24a;
+  --gold-light: #dfbd6b;
+  --green: #74c27a;
 
-  /* semantic */
-  --color-background: var(--stone-950);
-  --color-surface: var(--stone-900);
-  --color-surface-2: var(--stone-800);
-  --color-border: rgb(243 237 228 / 0.14);
-  --color-foreground: var(--cream-50);
-  --color-muted-foreground: var(--cream-300);
-  --color-accent: var(--gold-500);
-  --color-accent-hover: var(--gold-400);
-  --color-on-accent: var(--stone-950);
+  --bg: var(--ink-950);
+  --surface: var(--ink-900);
+  --surface-2: var(--ink-850);
+  --line: rgb(244 238 229 / 0.13);
+  --fg: var(--cream);
+  --fg-dim: var(--cream-dim);
+  --accent: var(--gold);
+  --accent-hover: var(--gold-light);
+  --on-accent: var(--ink-950);
 
-  --font-heading: "Cormorant", "Cormorant Garamond", Georgia, serif;
-  --font-body: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: "Cormorant", "Cormorant Garamond", Georgia, serif;
+  --sans: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  --text-sm: 0.875rem;
-  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
-  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
-  --text-h3: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
-  --text-h2: clamp(2.5rem, 1.9rem + 2.8vw, 4.5rem);
-  --text-h1: clamp(3.25rem, 2rem + 5vw, 6.25rem);
+  --t-sm: 0.875rem;
+  --t-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --t-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+  --t-h3: clamp(1.75rem, 1.45rem + 1.2vw, 2.5rem);
+  --t-h2: clamp(2.75rem, 1.9rem + 3.6vw, 5.5rem);
+  --t-statement: clamp(1.875rem, 1.3rem + 2.4vw, 3.5rem);
+  --t-hero: clamp(3.5rem, 1.6rem + 8.6vw, 10.5rem);
 
-  --space-page: clamp(1rem, 0.5rem + 2.2vw, 2.5rem);
-  --space-section: clamp(4.5rem, 3rem + 6vw, 8.5rem);
-  --header-h: 4.25rem;
-  --radius: 2px;
+  --gutter: clamp(1rem, 0.4rem + 2.6vw, 3rem);
+  --section: clamp(5rem, 3rem + 7vw, 10rem);
+  --header-h: 4.5rem;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -119,239 +118,320 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 body {
   margin: 0;
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-body);
-  font-size: var(--text-base);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: var(--t-base);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
+/* Film grain over the whole page */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 100; pointer-events: none; opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 img, iframe { display: block; max-width: 100%; }
 img { height: auto; }
-h1, h2, h3, p, figure, blockquote, table { margin: 0; }
-h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; line-height: 1; letter-spacing: -0.01em; text-wrap: balance; }
-a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
-a:hover { color: var(--color-accent-hover); }
-:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
-::selection { background: var(--color-accent); color: var(--color-on-accent); }
+h1, h2, h3, p, figure, blockquote, table, ol, ul, dl, dd { margin: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 0.95; letter-spacing: -0.015em; text-wrap: balance; }
+a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-hover); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--accent); color: var(--on-accent); }
 
-.container { width: 100%; max-width: 80rem; margin-inline: auto; padding-inline: var(--space-page); }
-.section { padding-block: var(--space-section); }
-.section-head { display: grid; gap: 1rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-.section-head p { color: var(--color-muted-foreground); max-width: 46ch; }
-.kicker { color: var(--color-accent); font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.04em; }
-.h2 { font-size: var(--text-h2); }
-.gold { color: var(--color-accent); }
-.todo { background: var(--todo); color: var(--stone-950); padding: 0.05em 0.35em; font-weight: 600; font-size: 0.95em; }
-.skip {
-  position: absolute; left: var(--space-page); top: -4rem; z-index: 50;
-  background: var(--color-accent); color: var(--color-on-accent); padding: 0.75rem 1rem; font-weight: 600;
+.wrap {
+  width: 100%; max-width: 86rem; margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
 }
-.skip:focus { top: 0.5rem; }
+.section { padding-block: var(--section); }
+.h2 { font-size: var(--t-h2); }
+.h2 em, .hero h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
+.label { display: inline-flex; align-items: center; gap: 0.75rem; color: var(--accent); font-size: var(--t-sm); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.label::before { content: ""; width: 2rem; height: 1px; background: currentColor; }
+.lead { color: var(--fg-dim); font-size: var(--t-lg); max-width: 40ch; }
 .icon { width: 1.2em; height: 1.2em; flex: none; }
+.skip { position: absolute; left: 1rem; top: -4rem; z-index: 200; background: var(--accent); color: var(--on-accent); padding: 0.75rem 1rem; font-weight: 600; }
+.skip:focus { top: 1rem; }
 
 /* Buttons */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
-  min-height: 3rem; padding: 0.8rem 1.5rem;
-  font: inherit; font-size: var(--text-base); font-weight: 600; line-height: 1.1; text-decoration: none;
-  border: 1px solid transparent; border-radius: var(--radius); cursor: pointer;
-  transition: background-color 200ms var(--ease), color 200ms var(--ease), border-color 200ms var(--ease), transform 150ms var(--ease);
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+  min-height: 3.25rem; padding: 0.85rem 1.6rem; overflow: hidden;
+  font-size: var(--t-base); font-weight: 600; line-height: 1.1; text-decoration: none; letter-spacing: 0.01em;
+  border: 1px solid transparent; border-radius: 0; cursor: pointer; background: none;
+  transition: color 250ms var(--ease), border-color 250ms var(--ease), transform 150ms var(--ease);
 }
+.btn > * { position: relative; }
 .btn:active { transform: scale(0.98); }
-.btn-primary { background: var(--color-accent); color: var(--color-on-accent); }
-.btn-primary:hover { background: var(--color-accent-hover); color: var(--color-on-accent); }
-.btn-outline { border-color: var(--color-border); color: var(--color-foreground); background: transparent; }
-.btn-outline:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.btn .icon { transition: transform 300ms var(--ease-out); }
+.btn:hover .icon { transform: translateX(4px); }
+.btn-gold { background: var(--accent); color: var(--on-accent); }
+.btn-gold::before { content: ""; position: absolute; inset: 0; background: var(--cream); transform: translateY(101%); transition: transform 350ms var(--ease-out); }
+.btn-gold:hover { color: var(--on-accent); }
+.btn-gold:hover::before { transform: none; }
+.btn-line { border-color: rgb(244 238 229 / 0.35); color: var(--fg); }
+.btn-line:hover { border-color: var(--accent); color: var(--accent); }
 
-/* 1. Header */
+/* Header */
 .site-header {
-  position: sticky; top: 0; z-index: 40;
-  background: rgb(20 17 16 / 0.96);
-  border-bottom: 1px solid var(--color-border);
+  position: fixed; inset: 0 0 auto; z-index: 50;
+  padding-top: env(safe-area-inset-top, 0px);
+  transition: background-color 300ms var(--ease), border-color 300ms var(--ease);
+  border-bottom: 1px solid transparent;
 }
-.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: var(--header-h); }
-.logo { display: inline-flex; align-items: baseline; gap: 0.45rem; text-decoration: none; white-space: nowrap; }
-.logo b { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; letter-spacing: 0.02em; color: var(--color-foreground); }
-.logo span { font-size: var(--text-sm); color: var(--color-muted-foreground); }
-.logo:hover b { color: var(--color-accent); }
-.nav { display: none; gap: 2rem; font-size: var(--text-sm); font-weight: 500; }
-.nav a { text-decoration: none; padding-block: 0.75rem; color: var(--color-muted-foreground); }
-.nav a:hover { color: var(--color-foreground); }
-.header-actions { display: flex; align-items: center; gap: 2rem; }
-.header-actions .btn { min-height: 2.75rem; padding: 0.6rem 1.15rem; font-size: var(--text-sm); }
-@media (min-width: 60rem) { .nav { display: flex; } }
+.site-header.is-solid { background: rgb(15 13 12 / 0.94); border-bottom-color: var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: var(--header-h); }
+.logo { display: inline-flex; align-items: baseline; gap: 0.5rem; text-decoration: none; white-space: nowrap; }
+.logo b { font-family: var(--serif); font-size: 1.9rem; font-weight: 700; letter-spacing: 0.04em; }
+.logo span { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-dim); }
+.nav { display: none; gap: 2.25rem; font-size: var(--t-sm); font-weight: 500; }
+.nav a { position: relative; text-decoration: none; padding-block: 0.75rem; color: var(--fg-dim); transition: color 200ms var(--ease); }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.45rem; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 300ms var(--ease-out); }
+.nav a:hover { color: var(--fg); }
+.nav a:hover::after { transform: none; }
+.header-right { display: flex; align-items: center; gap: 2.25rem; }
+.header-right .btn { min-height: 2.75rem; padding: 0.6rem 1.2rem; font-size: var(--t-sm); }
+@media (min-width: 62rem) { .nav { display: flex; } }
 
-/* 2. Hero */
-.hero { padding-block: clamp(2.5rem, 6vw, 6rem) clamp(3.5rem, 6vw, 6rem); }
-.hero-grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); align-items: center; }
-.hero h1 { font-size: var(--text-h1); line-height: 0.92; margin-top: 1rem; }
-.hero h1 em { font-style: italic; font-weight: 500; color: var(--color-accent); }
-.rating {
-  display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.75rem;
-  font-weight: 600; font-size: var(--text-lg); text-decoration: none;
+/* Hero */
+.hero { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: hidden; isolation: isolate; }
+.hero-bg { position: absolute; inset: -8% 0 0; z-index: -2; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: blur(3px) saturate(1.1); transform: scale(1.08); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgb(15 13 12 / 0.55) 0%, rgb(15 13 12 / 0.35) 35%, rgb(15 13 12 / 0.92) 82%, var(--bg) 100%),
+    linear-gradient(90deg, rgb(15 13 12 / 0.85) 0%, rgb(15 13 12 / 0.2) 70%); }
+.hero-inner { display: grid; gap: clamp(2rem, 4vw, 3rem); padding-top: calc(var(--header-h) + 3rem); padding-bottom: clamp(5.5rem, 9vw, 8rem); }
+.hero h1 { font-size: var(--t-hero); line-height: 0.86; letter-spacing: -0.03em; }
+.hero h1 .line { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.hero h1 .line > span { display: inline-block; }
+.hero-row { display: grid; gap: 2rem; align-items: end; }
+.hero-copy { display: grid; gap: 1.5rem; justify-items: start; }
+.rating { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.75rem; text-decoration: none; font-weight: 600; font-size: var(--t-lg); }
+.stars { display: inline-flex; gap: 2px; color: var(--accent); }
+.stars svg { width: 1em; height: 1em; }
+.rating u { text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.status { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0.9rem; border: 1px solid var(--line); background: rgb(15 13 12 / 0.5); font-size: var(--t-sm); font-weight: 500; }
+.status::before { content: ""; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--fg-dim); }
+.status[data-open="true"]::before { background: var(--green); box-shadow: 0 0 0 0 rgb(116 194 122 / 0.6); animation: pulse 2s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 8px rgb(116 194 122 / 0); } 100% { box-shadow: 0 0 0 0 rgb(116 194 122 / 0); } }
+.hero-card { position: relative; justify-self: end; width: min(100%, 30rem); }
+.hero-card .frame { position: relative; isolation: isolate; }
+.hero-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.hero-card .frame::before { content: ""; position: absolute; inset: 0.75rem -0.75rem -0.75rem 0.75rem; border: 1px solid var(--accent); z-index: -1; }
+.hero-card figcaption { margin-top: 1.4rem; font-size: var(--t-sm); color: var(--fg-dim); }
+.scroll-hint { position: absolute; left: 50%; bottom: 4.6rem; width: 1px; height: 3rem; background: linear-gradient(var(--accent), transparent); transform-origin: top; animation: hint 2.2s var(--ease) infinite; display: none; }
+@keyframes hint { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+@media (min-width: 62rem) {
+  .hero-row { grid-template-columns: 1.1fr 1fr; }
+  .scroll-hint { display: block; }
 }
-.rating .stars { display: inline-flex; color: var(--color-accent); }
-.rating .stars svg { width: 1.05em; height: 1.05em; }
-.rating span { text-decoration: underline; text-underline-offset: 0.25em; }
-.hero-lead { font-size: var(--text-lg); color: var(--color-muted-foreground); max-width: 34ch; margin-top: 1rem; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
-.hero-actions .btn { flex: 1 1 13rem; }
-.hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.75rem; font-size: var(--text-sm); color: var(--color-muted-foreground); }
-.hero-meta a { display: inline-flex; align-items: center; gap: 0.4rem; padding-block: 0.4rem; }
-.status { display: inline-flex; align-items: center; gap: 0.5rem; padding-block: 0.4rem; color: var(--color-foreground); font-weight: 500; }
-.status::before { content: ""; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--color-muted-foreground); }
-.status[data-open="true"]::before { background: #6fbf73; }
-.hero-photo { position: relative; margin: 0; }
-.hero-photo::before {
-  content: ""; position: absolute; inset: 0.75rem -0.75rem -0.75rem 0.75rem;
-  border: 1px solid var(--color-accent); pointer-events: none;
+@media (max-width: 61.99rem) { .hero-card { justify-self: start; width: min(calc(100% - 0.75rem), 26rem); } .hero-actions .btn { flex: 1 1 auto; } }
+
+/* Ticker */
+.ticker { position: absolute; inset: auto 0 0; border-block: 1px solid var(--line); background: rgb(15 13 12 / 0.7); overflow: hidden; }
+.ticker-track { display: flex; width: max-content; animation: ticker 38s linear infinite; }
+.ticker ul { display: flex; list-style: none; padding: 0; }
+.ticker li { display: flex; align-items: center; gap: 2.25rem; padding: 1rem 0 1rem 2.25rem; font-family: var(--serif); font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); font-style: italic; white-space: nowrap; }
+.ticker li::after { content: "✦"; font-style: normal; font-size: 0.7em; color: var(--accent); }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* Intro + counters */
+.intro-grid { display: grid; gap: clamp(3rem, 6vw, 5rem); }
+.statement { font-family: var(--serif); font-size: var(--t-statement); line-height: 1.12; font-weight: 500; max-width: 26ch; margin-top: 1.5rem; }
+.statement em { color: var(--accent); }
+.counters { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); align-self: start; }
+.counter { background: var(--bg); padding: clamp(1.25rem, 3vw, 2.25rem); }
+.counter strong { display: block; font-family: var(--serif); font-size: clamp(3rem, 2.2rem + 3vw, 5rem); line-height: 0.9; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.counter span { display: block; margin-top: 0.6rem; font-size: var(--t-sm); color: var(--fg-dim); }
+@media (min-width: 62rem) { .intro-grid { grid-template-columns: 1.2fr 1fr; align-items: end; } }
+
+/* Services: interactive price list */
+.services { background: var(--surface); }
+.services-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem 3rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.services-grid { display: grid; gap: clamp(2rem, 4vw, 4rem); }
+.service-photo { position: relative; aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; background: var(--surface-2); display: none; }
+.service-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 500ms var(--ease), transform 900ms var(--ease-out); }
+.service-photo img.is-active { opacity: 1; transform: none; }
+.service-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem 1.25rem 1.1rem; background: linear-gradient(transparent, rgb(15 13 12 / 0.85)); font-family: var(--serif); font-size: var(--t-h3); line-height: 1; }
+.menu { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+.menu li { border-bottom: 1px solid var(--line); }
+.menu a {
+  display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 0.25rem 1.5rem;
+  padding: 1.35rem 0.25rem; text-decoration: none; position: relative;
+  transition: padding 350ms var(--ease-out), color 250ms var(--ease);
 }
-.hero-photo img { position: relative; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--color-surface); }
-@media (min-width: 60rem) {
-  .hero-grid { grid-template-columns: 1.2fr 1fr; }
-  .hero-actions .btn { flex: 0 0 auto; }
+.menu a::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--accent); transform: scaleY(0); transition: transform 350ms var(--ease-out); }
+.menu a:hover, .menu a.is-active { padding-left: 1.25rem; color: var(--fg); }
+.menu a:hover::before, .menu a.is-active::before { transform: none; }
+.menu h3 { font-size: var(--t-h3); font-weight: 600; }
+.menu .price { font-family: var(--serif); font-size: var(--t-h3); font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.menu .price small { font-family: var(--sans); font-size: var(--t-sm); font-weight: 500; color: var(--fg-dim); }
+.menu .meta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem; font-size: var(--t-sm); color: var(--fg-dim); }
+.menu .book { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--accent); font-weight: 600; opacity: 0.8; transition: opacity 200ms var(--ease); }
+.menu a:hover .book { opacity: 1; }
+.services-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-top: 2.5rem; color: var(--fg-dim); font-size: var(--t-sm); }
+@media (min-width: 62rem) {
+  .services-grid { grid-template-columns: 1fr 1.25fr; align-items: start; }
+  .service-photo { display: block; position: sticky; top: calc(var(--header-h) + 2rem); }
 }
 
-/* Facts strip */
-.facts { border-block: 1px solid var(--color-border); }
-.facts ul { list-style: none; margin: 0 auto; padding-block: 0; display: grid; grid-template-columns: repeat(2, 1fr); }
-.facts li { padding: 1.5rem 0.75rem 1.5rem 0; }
-.facts strong { display: block; font-family: var(--font-heading); font-size: clamp(2rem, 1.6rem + 1.6vw, 3rem); font-weight: 600; line-height: 1; color: var(--color-accent); }
-.facts span { font-size: var(--text-sm); color: var(--color-muted-foreground); }
-@media (min-width: 48rem) { .facts ul { grid-template-columns: repeat(4, 1fr); } }
+/* Story */
+.story-head { display: grid; gap: 1.5rem; margin-bottom: clamp(3rem, 6vw, 5rem); }
+.timeline { list-style: none; padding: 0; display: grid; gap: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 0.45rem; top: 0.6rem; bottom: 0.6rem; width: 1px; background: var(--line); }
+.timeline::after { content: ""; position: absolute; left: 0.45rem; top: 0.6rem; width: 1px; height: calc(100% - 1.2rem); background: var(--accent); transform-origin: top; transform: scaleY(var(--p, 1)); }
+.step { position: relative; padding: 0 0 2.75rem 2.75rem; }
+.step::before { content: ""; position: absolute; left: 0; top: 0.55rem; width: 0.95rem; height: 0.95rem; border-radius: 50%; border: 1px solid var(--accent); background: var(--bg); }
+.step.is-on::before { background: var(--accent); }
+.step .year { font-family: var(--serif); font-size: clamp(3.25rem, 2.2rem + 4.4vw, 6.5rem); line-height: 0.85; font-weight: 600; color: var(--accent); }
+.step h3 { font-size: var(--t-h3); margin-top: 0.75rem; }
+.step p { color: var(--fg-dim); margin-top: 0.6rem; max-width: 36ch; }
+@media (min-width: 62rem) {
+  .timeline { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .timeline::before { left: 0; right: 0; top: 0.47rem; bottom: auto; width: auto; height: 1px; }
+  .timeline::after { left: 0; top: 0.47rem; width: 100%; height: 1px; transform-origin: left; transform: scaleX(var(--p, 1)); }
+  .step { padding: 2.75rem 0 0; }
+  .step::before { top: 0; }
+}
 
-/* 3. Services: price board */
-.services-board { background: var(--color-surface); padding: clamp(1.5rem, 4vw, 3.5rem); border: 1px solid var(--color-border); }
-.price-list { list-style: none; margin: 0; padding: 0; display: grid; column-gap: clamp(2rem, 5vw, 4.5rem); }
-.price-list li { padding-block: 1.1rem; border-bottom: 1px solid var(--color-border); }
-.price-row { display: flex; align-items: baseline; gap: 0.75rem; }
-.price-row h3 { font-size: var(--text-h3); }
-.price-row .leader { flex: 1; border-bottom: 1px dotted rgb(243 237 228 / 0.35); transform: translateY(-0.3em); min-width: 1.5rem; }
-.price-row .price { white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
-.price-row .price-note { font-weight: 400; font-size: var(--text-sm); color: var(--color-muted-foreground); }
-.price-list .duration { color: var(--color-muted-foreground); font-size: var(--text-sm); margin-top: 0.3rem; }
-.price-list .extra { color: var(--color-muted-foreground); font-size: var(--text-sm); }
-.services-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem 2rem; margin-top: 2.5rem; }
-@media (min-width: 60rem) { .price-list { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 30rem) { .price-row { flex-wrap: wrap; } .price-row .leader { display: none; } .price-row .price { margin-left: auto; } }
-
-/* 4. Reviews */
-.reviews { background: var(--color-surface); }
-.scores { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.score { border: 1px solid var(--color-border); padding: clamp(1.25rem, 3vw, 2.25rem); }
-.score-num { font-family: var(--font-heading); font-size: clamp(3.5rem, 2.5rem + 5vw, 6.5rem); font-weight: 600; line-height: 0.9; color: var(--color-accent); }
-.score-src { font-weight: 600; margin-top: 0.75rem; }
-.score-count { color: var(--color-muted-foreground); font-size: var(--text-sm); }
-.score a { display: inline-block; margin-top: 0.75rem; font-size: var(--text-sm); padding-block: 0.4rem; }
-.reviews-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
-.reviews-foot p { font-size: var(--text-sm); color: var(--color-muted-foreground); }
-
-/* 5. Team */
-.team-grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
-.member img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--color-surface); filter: saturate(0.9); transition: filter 400ms var(--ease); }
-.member:hover img { filter: saturate(1.05); }
-.member h3 { font-size: var(--text-h2); margin-top: 1.5rem; }
-.member .role { color: var(--color-accent); font-weight: 600; font-size: var(--text-sm); margin-top: 0.4rem; }
-.member p:not(.role) { margin-top: 0.9rem; max-width: 44ch; }
+/* Team */
+.team { background: var(--surface); }
+.team-grid { display: grid; gap: clamp(3rem, 6vw, 5rem); margin-top: clamp(3rem, 6vw, 5rem); }
+.member { display: grid; gap: 1.5rem; }
+.member .photo { position: relative; overflow: hidden; aspect-ratio: 4 / 5; max-width: 100%; background: var(--surface-2); }
+.member .photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); transform: scale(1.02); transition: filter 600ms var(--ease), transform 900ms var(--ease-out); }
+.member:hover .photo img { filter: grayscale(0); transform: scale(1.06); }
+.member .name { font-family: var(--serif); font-size: clamp(3.5rem, 2.4rem + 4.6vw, 7rem); line-height: 0.85; font-weight: 600; }
+.member .role { color: var(--accent); font-size: var(--t-sm); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.75rem; }
+.member p:not(.role) { color: var(--fg-dim); margin-top: 0.9rem; max-width: 40ch; }
 @media (min-width: 48rem) {
   .team-grid { grid-template-columns: 1fr 1fr; }
-  .member:nth-child(2) { margin-top: clamp(3rem, 8vw, 7rem); }
+  .member:nth-child(2) { margin-top: clamp(4rem, 10vw, 9rem); }
 }
 
-/* 6. Photos */
+/* Reviews */
+.reviews-grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); align-items: center; }
+.big-score { display: flex; align-items: flex-end; gap: 1.25rem; }
+.big-score strong { font-family: var(--serif); font-size: clamp(7rem, 4rem + 14vw, 15rem); line-height: 0.78; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.big-score .stars { font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); }
+.big-score span { display: block; color: var(--fg-dim); font-size: var(--t-sm); margin-top: 0.5rem; }
+.score-list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.score-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.25rem; background: var(--bg); padding: 1.4rem 1.5rem; text-decoration: none; transition: background-color 250ms var(--ease); }
+.score-row:hover { background: var(--surface-2); color: var(--fg); }
+.score-row strong { font-family: var(--serif); font-size: 2.75rem; line-height: 1; font-weight: 600; color: var(--accent); }
+.score-row b { display: block; font-weight: 600; }
+.score-row small { color: var(--fg-dim); font-size: var(--t-sm); }
+.score-row .icon { color: var(--accent); transition: transform 300ms var(--ease-out); }
+.score-row:hover .icon { transform: translateX(4px); }
+.reviews .note { margin-top: 1rem; font-size: var(--t-sm); color: var(--fg-dim); }
+@media (min-width: 62rem) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Gallery */
+.gallery-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 2rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
 .gallery {
-  list-style: none; margin: 0; padding: 0;
+  list-style: none; padding: 0;
   display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: clamp(11rem, 56vw, 16rem); gap: 0.5rem;
   grid-template-areas: "trim trim" "chair cut" "fade cut" "lounge lounge";
 }
-.gallery li { overflow: hidden; background: var(--color-surface); }
-.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
-.gallery li:hover img { transform: scale(1.04); }
+.gallery li { overflow: hidden; background: var(--surface-2); }
+.gallery button { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 800ms var(--ease-out), filter 400ms var(--ease); filter: brightness(0.9); }
+.gallery button:hover img, .gallery button:focus-visible img { transform: scale(1.06); filter: brightness(1); }
 .g-trim { grid-area: trim; } .g-chair { grid-area: chair; } .g-cut { grid-area: cut; }
 .g-fade { grid-area: fade; } .g-lounge { grid-area: lounge; }
 @media (min-width: 52rem) {
   .gallery {
-    grid-template-columns: 1fr 1fr 1fr 1fr; grid-auto-rows: clamp(13rem, 24vw, 22rem); gap: 0.75rem;
+    grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(14rem, 24vw, 22rem); gap: 0.75rem;
     grid-template-areas: "trim trim chair cut" "lounge lounge fade cut";
   }
 }
+.lightbox { border: 0; padding: 0; max-width: min(92vw, 60rem); background: transparent; color: var(--fg); }
+.lightbox::backdrop { background: rgb(15 13 12 / 0.92); }
+.lightbox img { max-height: 80vh; width: auto; margin-inline: auto; }
+.lightbox p { text-align: center; margin-top: 1rem; color: var(--fg-dim); font-size: var(--t-sm); }
+.lightbox .close { position: fixed; top: max(1rem, env(safe-area-inset-top, 0px)); right: max(1rem, env(safe-area-inset-right, 0px)); min-width: 3rem; min-height: 3rem; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font-size: 1.5rem; line-height: 1; }
 
-/* 7. Visit */
+/* Visit */
+.visit { background: var(--surface); }
 .visit-grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
-.address { margin-top: 1.5rem; font-style: normal; font-family: var(--font-heading); font-size: var(--text-h3); line-height: 1.2; }
+.address { margin-top: 1.5rem; font-style: normal; font-family: var(--serif); font-size: var(--t-h3); line-height: 1.15; }
 .hours { width: 100%; border-collapse: collapse; margin-top: 2rem; }
 .hours caption { text-align: left; font-weight: 600; padding-bottom: 0.5rem; }
-.hours th, .hours td { padding: 0.7rem 0; border-bottom: 1px solid var(--color-border); text-align: left; font-weight: 400; }
+.hours th, .hours td { padding: 0.75rem 0; border-bottom: 1px solid var(--line); text-align: left; font-weight: 400; }
 .hours td { text-align: right; font-variant-numeric: tabular-nums; }
-.hours tr.today th, .hours tr.today td { color: var(--color-accent); font-weight: 600; }
+.hours tr.today th, .hours tr.today td { color: var(--accent); font-weight: 600; }
 .hours tr.today th::after { content: " · vandaag"; font-weight: 400; }
 .visit .btn { margin-top: 2rem; }
-.map { position: relative; width: 100%; min-height: 24rem; border: 1px solid var(--color-border); background: var(--color-surface); overflow: hidden; }
+.map { position: relative; width: 100%; min-height: 26rem; border: 1px solid var(--line); background: var(--surface-2); overflow: hidden; }
 .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.map-card { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 1rem; padding: 1.5rem; text-align: center;
-  background: radial-gradient(circle at 50% 42%, rgb(201 162 74 / 0.16), transparent 60%), var(--color-surface); }
-.map-card .icon { width: 2.5rem; height: 2.5rem; color: var(--color-accent); }
-.map-card p { font-family: var(--font-heading); font-size: var(--text-h3); line-height: 1.15; }
-.map-card small { color: var(--color-muted-foreground); font-size: var(--text-sm); max-width: 32ch; }
+.map-card { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 1.1rem; padding: 1.5rem; text-align: center;
+  background: radial-gradient(circle at 50% 40%, rgb(201 162 74 / 0.18), transparent 60%), var(--surface-2); }
+.map-card .icon { width: 2.75rem; height: 2.75rem; color: var(--accent); animation: bob 2.4s var(--ease) infinite; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+.map-card p { font-family: var(--serif); font-size: var(--t-h3); line-height: 1.1; }
+.map-card small { color: var(--fg-dim); font-size: var(--t-sm); max-width: 32ch; }
 .map-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-@media (min-width: 60rem) {
-  .visit-grid { grid-template-columns: 5fr 7fr; align-items: stretch; }
-  .map { aspect-ratio: auto; height: 100%; min-height: 30rem; }
-}
+@media (min-width: 62rem) { .visit-grid { grid-template-columns: 5fr 7fr; align-items: stretch; } }
 
-/* 8. Contact */
-.contact { background: var(--color-surface); }
-.contact-grid { display: grid; gap: 0.75rem; }
-.contact-btn {
-  display: flex; align-items: center; gap: 1rem; min-height: 5rem; padding: 1.1rem 1.4rem;
-  border: 1px solid var(--color-border); background: var(--color-background); text-decoration: none;
-  transition: border-color 200ms var(--ease), background-color 200ms var(--ease);
-}
-.contact-btn:hover { border-color: var(--color-accent); color: var(--color-foreground); }
-.contact-btn .icon { width: 1.6rem; height: 1.6rem; color: var(--color-accent); }
-.contact-btn b { display: block; font-family: var(--font-heading); font-size: var(--text-h3); font-weight: 600; line-height: 1; }
-.contact-btn small { display: block; margin-top: 0.3rem; color: var(--color-muted-foreground); font-size: var(--text-sm); word-break: break-all; }
-.contact-btn.primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
-.contact-btn.primary .icon, .contact-btn.primary small { color: var(--color-on-accent); }
-.contact-btn.primary:hover { background: var(--color-accent-hover); color: var(--color-on-accent); }
-.contact .note { margin-top: 1.25rem; font-size: var(--text-sm); }
+/* Contact */
+.contact-grid { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.contact-btn { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.25rem; min-height: 6.5rem; padding: 1.5rem; background: var(--bg); text-decoration: none; transition: background-color 300ms var(--ease); }
+.contact-btn:hover { background: var(--surface-2); color: var(--fg); }
+.contact-btn > .icon:first-child { width: 1.75rem; height: 1.75rem; color: var(--accent); }
+.contact-btn b { display: block; font-family: var(--serif); font-size: var(--t-h3); font-weight: 600; line-height: 1; }
+.contact-btn small { display: block; margin-top: 0.35rem; color: var(--fg-dim); font-size: var(--t-sm); overflow-wrap: anywhere; }
+.contact-btn > .icon:last-child { color: var(--fg-dim); transition: transform 300ms var(--ease-out), color 300ms var(--ease); }
+.contact-btn:hover > .icon:last-child { transform: translateX(5px); color: var(--accent); }
 @media (min-width: 40rem) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 26rem) { .contact-btn { grid-template-columns: auto 1fr; padding-inline: 1.1rem; } .contact-btn > .icon:last-child { display: none; } }
 
-/* 9. Jobs */
-.jobs { border-block: 1px solid var(--color-border); padding-block: clamp(2.5rem, 5vw, 3.5rem); }
-.jobs .container { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem 2rem; }
-.jobs h2 { font-size: var(--text-h3); }
-.jobs p { font-size: var(--text-lg); }
-.jobs a { color: var(--color-accent); font-weight: 600; }
+/* Jobs */
+.jobs { border-block: 1px solid var(--line); padding-block: clamp(2.5rem, 5vw, 3.5rem); }
+.jobs .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem 2rem; }
+.jobs h2 { font-size: var(--t-h3); }
+.jobs p { font-size: var(--t-lg); }
+.jobs a { color: var(--accent); font-weight: 600; }
 
-/* 10. Footer */
-.site-footer { padding-block: clamp(3.5rem, 7vw, 5.5rem) 2rem; }
+/* Footer */
+.site-footer { position: relative; overflow: hidden; padding-top: clamp(4rem, 8vw, 6rem); }
 .footer-grid { display: grid; gap: 2.5rem; }
-.footer-brand b { font-family: var(--font-heading); font-size: clamp(3rem, 2rem + 5vw, 6rem); font-weight: 700; line-height: 0.9; color: var(--color-accent); display: block; }
-.footer-brand p { margin-top: 0.75rem; color: var(--color-muted-foreground); }
-.nap { font-style: normal; display: grid; gap: 0.25rem; }
+.footer-cta { font-family: var(--serif); font-size: var(--t-h2); line-height: 0.95; font-weight: 600; max-width: 12ch; }
+.footer-cta + .btn { margin-top: 1.75rem; }
+.nap { font-style: normal; display: grid; gap: 0.2rem; align-content: end; }
 .nap a { display: inline-block; padding-block: 0.35rem; }
-.privacy { font-size: var(--text-sm); color: var(--color-muted-foreground); max-width: 70ch; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
-.legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; margin-top: 1.25rem; font-size: var(--text-sm); color: var(--color-muted-foreground); }
+.privacy { font-size: var(--t-sm); color: var(--fg-dim); max-width: 72ch; margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; margin-top: 1.25rem; font-size: var(--t-sm); color: var(--fg-dim); }
 .legal a { padding-block: 0.35rem; }
+.footer-word { font-family: var(--serif); font-weight: 700; font-size: clamp(7rem, 30vw, 28rem); line-height: 0.75; letter-spacing: -0.04em; text-align: center; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgb(201 162 74 / 0.45); margin-top: 2rem; transform: translateY(12%); user-select: none; }
 @media (min-width: 52rem) { .footer-grid { grid-template-columns: 1.4fr 1fr; align-items: end; } }
 
-/* Motion */
-.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
-.js .reveal.in { opacity: 1; transform: none; }
-@keyframes fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-.hero-copy > * { animation: fade-up 700ms var(--ease) both; }
-.hero-copy > :nth-child(2) { animation-delay: 60ms; }
-.hero-copy > :nth-child(3) { animation-delay: 120ms; }
-.hero-copy > :nth-child(4) { animation-delay: 180ms; }
-.hero-copy > :nth-child(5) { animation-delay: 240ms; }
-.hero-copy > :nth-child(6) { animation-delay: 300ms; }
+/* Mobile booking bar */
+.mbar { position: fixed; inset: auto 0 0; z-index: 60; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 1px; background: var(--line);
+  padding-bottom: env(safe-area-inset-bottom, 0px); transform: translateY(110%); transition: transform 400ms var(--ease-out); }
+.mbar.is-on { transform: none; }
+.mbar a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3.5rem; background: var(--ink-900); text-decoration: none; font-size: var(--t-sm); font-weight: 600; }
+.mbar a:first-child { background: var(--accent); color: var(--on-accent); }
+@media (min-width: 62rem) { .mbar { display: none; } }
+@media (max-width: 61.99rem) { body { padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px)); } }
+
+/* Motion: content is visible without script; script adds the entrance */
+.js [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 900ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: var(--d, 0ms); }
+.js [data-reveal].in { opacity: 1; transform: none; }
+.hero h1 .line > span { animation: rise 1100ms var(--ease-out) both; }
+.hero h1 .line:nth-child(2) > span { animation-delay: 120ms; }
+.hero-copy, .hero-card { animation: fade 1000ms var(--ease-out) 350ms both; }
+@keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes fade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .js .reveal { opacity: 1; transform: none; }
+  .js [data-reveal] { opacity: 1; transform: none; }
+  .ticker-track { transform: none; }
 }
 </style>
 </head>
@@ -360,160 +440,225 @@ a:hover { color: var(--color-accent-hover); }
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
-  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3Z"/></symbol>
-  <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></g></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3Z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></g></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></g></symbol>
 </svg>
 
-<header class="site-header">
-  <div class="container">
-    <a class="logo" href="#top"><b>4MEN</b> <span>Barbershop</span></a>
-    <div class="header-actions">
+<header class="site-header" data-header>
+  <div class="wrap">
+    <a class="logo" href="#top"><b>4MEN</b><span>Barbershop</span></a>
+    <div class="header-right">
       <nav class="nav" aria-label="Secties">
         <a href="#diensten">Diensten</a>
-        <a href="#reviews">Reviews</a>
+        <a href="#verhaal">Verhaal</a>
         <a href="#team">Team</a>
-        <a href="#fotos">Foto's</a>
+        <a href="#reviews">Reviews</a>
         <a href="#bezoek">Bezoek ons</a>
       </nav>
-      <a class="btn btn-primary" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Boek nu</a>
+      <a class="btn btn-gold" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><span>Boek nu</span></a>
     </div>
   </div>
 </header>
 
 <main id="inhoud">
   <section class="hero" id="top" aria-labelledby="titel">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="kicker">4MEN Barbershop · Goudsesingel 101</p>
-        <h1 id="titel">Barbershop in <em>Rotterdam</em></h1>
-        <a class="rating" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">
-          <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg></span>
-          <span>4,9 uit 1000+ reviews</span>
-        </a>
-        <p class="hero-lead">Vakmanschap sinds 2003, aan de Goudsesingel. Knippen, baard en hot towel shave door ervaren barbiers.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Boek je knipbeurt<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-outline" href="https://wa.me/31648351081" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>App ons</a>
+    <div class="hero-bg" data-parallax aria-hidden="true">
+      <img src="img/hero.webp" width="506" height="380" alt="">
+    </div>
+    <div class="wrap hero-inner">
+      <h1 id="titel">
+        <span class="line"><span>Barbershop</span></span>
+        <span class="line"><span>in <em>Rotterdam</em></span></span>
+      </h1>
+      <div class="hero-row">
+        <div class="hero-copy">
+          <a class="rating" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">
+            <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <u>4,9 uit 1000+ reviews</u>
+          </a>
+          <p class="lead">Vakmanschap sinds 2003, aan de Goudsesingel. Knippen, baard en hot towel shave door barbiers die hun vak leerden in Oekraïne.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><span>Boek je knipbeurt</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-line" href="https://wa.me/31648351081" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span>App ons</span></a>
+          </div>
+          <p class="status" data-status>Elke dag open vanaf 09:00</p>
         </div>
-        <div class="hero-meta">
-          <span class="status" data-status>Elke dag open vanaf 09:00</span>
-          <a href="https://www.instagram.com/4men.barbershop.nl/" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-insta"/></svg>@4men.barbershop.nl</a>
-        </div>
+        <figure class="hero-card">
+          <div class="frame"><img src="img/foto-ras-baard.webp" width="506" height="337" alt="Ras trimt met kam en tondeuse de baard van een klant bij 4MEN Barbershop" fetchpriority="high"></div>
+          <figcaption>Ras aan het werk aan de Goudsesingel 101 · <a href="https://www.instagram.com/4men.barbershop.nl/" rel="noopener">@4men.barbershop.nl</a></figcaption>
+        </figure>
       </div>
-      <figure class="hero-photo">
-        <img src="img/hero.webp" width="506" height="380" alt="Interieur van 4MEN Barbershop met een groot aquarium en een rij klassieke barbierstoelen" fetchpriority="high">
-      </figure>
+    </div>
+    <span class="scroll-hint" aria-hidden="true"></span>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <ul><li>Knippen</li><li>Baard trimmen</li><li>Hot towel scheerbeurt</li><li>Lang haar</li><li>Buzz cut</li><li>Knippen + baard</li><li>Jongens knippen</li><li>Elke dag open</li></ul>
+        <ul><li>Knippen</li><li>Baard trimmen</li><li>Hot towel scheerbeurt</li><li>Lang haar</li><li>Buzz cut</li><li>Knippen + baard</li><li>Jongens knippen</li><li>Elke dag open</li></ul>
+      </div>
     </div>
   </section>
 
-  <div class="facts" aria-label="In het kort">
-    <ul class="container">
-      <li><strong>2003</strong><span>barbier sinds</span></li>
-      <li><strong>4,9</strong><span>op Treatwell, 1003 reviews</span></li>
-      <li><strong>5,0</strong><span>op Google, 275 reviews</span></li>
-      <li><strong>7/7</strong><span>elke dag open vanaf 09:00</span></li>
-    </ul>
-  </div>
-
-  <section class="section" id="diensten" aria-labelledby="diensten-titel">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="h2" id="diensten-titel">Diensten en prijzen</h2>
-        <p>Van een snelle buzz cut tot een klassieke hot towel scheerbeurt: alles wat je van een goede herenkapper in Rotterdam verwacht.</p>
+  <section class="section" aria-labelledby="intro-titel">
+    <div class="wrap intro-grid">
+      <div data-reveal>
+        <p class="label">4MEN Barbershop</p>
+        <h2 class="h2" id="intro-titel" style="margin-top:1.25rem">Vakmanschap <em>sinds 2003</em></h2>
+        <p class="statement">Een barbier in Rotterdam die het vak leerde in Oekraïne, een zaak opende in Kyiv en nu elke dag knipt aan de Goudsesingel.</p>
       </div>
-      <div class="services-board reveal">
-        <ul class="price-list">
-          <li><div class="price-row"><h3>Knippen</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 43</span></div><p class="duration">45 min</p></li>
-          <li><div class="price-row"><h3>Baard trimmen</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 35</span></div><p class="duration">30 min · met hot towel en baardolie</p></li>
-          <li><div class="price-row"><h3>Lang haar knippen</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 55</span></div><p class="duration">1 uur</p></li>
-          <li><div class="price-row"><h3>Tondeuse (buzz cut)</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 25</span></div><p class="duration">15 min</p></li>
-          <li><div class="price-row"><h3>Tondeuse + baard</h3><span class="leader" aria-hidden="true"></span><span class="price price-note">prijs via Treatwell</span></div><p class="duration">50 min · tondeuse en baard trimmen</p></li>
-          <li><div class="price-row"><h3>Hot towel scheerbeurt</h3><span class="leader" aria-hidden="true"></span><span class="price price-note">prijs via Treatwell</span></div><p class="duration">30 min</p></li>
-          <li><div class="price-row"><h3>Knippen + baard</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 65</span></div><p class="duration">1 uur 15 min · combi</p></li>
-          <li><div class="price-row"><h3>Jongens knippen</h3><span class="leader" aria-hidden="true"></span><span class="price">€ 35</span></div><p class="duration">30 min · 3 t/m 10 jaar</p></li>
-        </ul>
-        <div class="services-foot">
-          <p class="extra">Prijzen volgens Treatwell. Boek online of loop binnen aan de Goudsesingel.</p>
-          <a class="btn btn-primary" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Boek een dienst<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <div class="counters" data-reveal style="--d:120ms">
+        <div class="counter"><strong data-count="2003" data-dec="0">2003</strong><span>barbier sinds</span></div>
+        <div class="counter"><strong data-count="4.9" data-dec="1">4,9</strong><span>op Treatwell, 1003 reviews</span></div>
+        <div class="counter"><strong data-count="5.0" data-dec="1">5,0</strong><span>op Google, 275 reviews</span></div>
+        <div class="counter"><strong data-count="7" data-dec="0">7</strong><span>dagen per week open</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="diensten" aria-labelledby="diensten-titel">
+    <div class="wrap">
+      <div class="services-head" data-reveal>
+        <div>
+          <p class="label">Prijslijst</p>
+          <h2 class="h2" id="diensten-titel" style="margin-top:1.25rem">Diensten <em>en prijzen</em></h2>
         </div>
+        <p class="lead">Alles wat je van een goede herenkapper in Rotterdam verwacht. Kies een dienst en boek direct via Treatwell.</p>
+      </div>
+      <div class="services-grid">
+        <figure class="service-photo" aria-hidden="true">
+          <img class="is-active" data-photo="fade" src="img/foto-fade.webp" width="235" height="314" alt="" loading="lazy">
+          <img data-photo="trim" src="img/foto-ras-baard.webp" width="506" height="337" alt="" loading="lazy">
+          <img data-photo="cut" src="img/foto-andrew-knipt.webp" width="176" height="314" alt="" loading="lazy">
+          <img data-photo="chair" src="img/foto-stoel.webp" width="222" height="314" alt="" loading="lazy">
+          <img data-photo="shop" src="img/hero.webp" width="506" height="380" alt="" loading="lazy">
+          <figcaption data-photo-caption>Knippen</figcaption>
+        </figure>
+        <div>
+          <ul class="menu">
+            <li><a class="is-active" data-show="fade" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><h3>Knippen</h3><span class="price">€ 43</span><span class="meta"><span>45 min</span><span class="book">Boek <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+            <li><a data-show="trim" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><h3>Baard trimmen</h3><span class="price">€ 35</span><span class="meta"><span>30 min · met hot towel en baardolie</span><span class="book">Boek <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+            <li><a data-show="shop" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><h3>Knippen + baard</h3><span class="price">€ 65</span><span class="meta"><span>1 uur 15 min · combi</span><span class="book">Boek <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+            <li><a data-show="cut" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><h3>Lang haar knippen</h3><span class="price">€ 55</span><span class="meta"><span>1 uur</span><span class="book">Boek <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+            <li><a data-show="fade" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><h3>Tondeuse (buzz cut)</h3><span class="price">€ 25</span><span class="meta"><span>15 min</span><span class="book">Boek <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+            <li><a data-show="trim" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><h3>Tondeuse + baard</h3><span class="price"><small>prijs via Treatwell</small></span><span class="meta"><span>50 min · tondeuse en baard trimmen</span><span class="book">Boek <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+            <li><a data-show="chair" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><h3>Hot towel scheerbeurt</h3><span class="price"><small>prijs via Treatwell</small></span><span class="meta"><span>30 min</span><span class="book">Boek <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+            <li><a data-show="chair" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><h3>Jongens knippen</h3><span class="price">€ 35</span><span class="meta"><span>30 min · 3 t/m 10 jaar</span><span class="book">Boek <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+          </ul>
+          <div class="services-foot">
+            <p>Prijzen volgens Treatwell. Je betaalt in de zaak.</p>
+            <a class="btn btn-gold" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><span>Bekijk beschikbaarheid</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="verhaal" aria-labelledby="verhaal-titel">
+    <div class="wrap">
+      <div class="story-head" data-reveal>
+        <p class="label">Het verhaal</p>
+        <h2 class="h2" id="verhaal-titel">Van Kyiv naar <em>de Goudsesingel</em></h2>
+      </div>
+      <ol class="timeline" data-timeline>
+        <li class="step" data-reveal>
+          <p class="year">2003</p>
+          <h3>Oekraïne</h3>
+          <p>Ras pakt de schaar en de tondeuse op en begint als barbier in Oekraïne.</p>
+        </li>
+        <li class="step" data-reveal style="--d:120ms">
+          <p class="year">2016</p>
+          <h3>Kyiv</h3>
+          <p>Met drie collega's opent Ras een eigen barbershop in Kyiv.</p>
+        </li>
+        <li class="step" data-reveal style="--d:240ms">
+          <p class="year">Nu</p>
+          <h3>Rotterdam</h3>
+          <p>4MEN Barbershop aan de Goudsesingel 101. Elke dag open, met Andrew in het team.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section team" id="team" aria-labelledby="team-titel">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="label">Het team</p>
+        <h2 class="h2" id="team-titel" style="margin-top:1.25rem">De <em>barbiers</em></h2>
+      </div>
+      <div class="team-grid">
+        <article class="member" data-reveal>
+          <div class="photo"><img src="img/team-ras.webp" width="482" height="602" loading="lazy" decoding="async" alt="Portret van Ras, oprichter van 4MEN Barbershop"></div>
+          <div>
+            <h3 class="name">Ras</h3>
+            <p class="role">Oprichter</p>
+            <p>Barbier sinds 2003, begonnen in Oekraïne. Opende in 2016 met drie collega's een barbershop in Kyiv, en daarna de zaak in Rotterdam.</p>
+          </div>
+        </article>
+        <article class="member" data-reveal style="--d:120ms">
+          <div class="photo"><img src="img/team-andrew.webp" width="637" height="796" loading="lazy" decoding="async" alt="Portret van Andrew, barbier bij 4MEN Barbershop"></div>
+          <div>
+            <h3 class="name">Andrew</h3>
+            <p class="role">Barbier</p>
+            <p>Begon op zijn 21e als barbier. Werkte in Kyiv en Athene, en knipt nu in Rotterdam.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="section reviews" id="reviews" aria-labelledby="reviews-titel">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="h2" id="reviews-titel">Reviews</h2>
-        <p>Meer dan 1000 klanten beoordeelden 4MEN Barbershop op Treatwell en Google.</p>
-      </div>
-      <div class="scores reveal">
-        <div class="score">
-          <p class="score-num">4,9</p>
-          <p class="score-src">Treatwell</p>
-          <p class="score-count">uit 1003 reviews</p>
-          <a href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Bekijk op Treatwell</a>
-        </div>
-        <div class="score">
-          <p class="score-num">5,0</p>
-          <p class="score-src">Google</p>
-          <p class="score-count">uit 275 reviews</p>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=4MEN%20Barbershop%20Goudsesingel%20101%20Rotterdam" rel="noopener">Bekijk op Google</a>
+    <div class="wrap reviews-grid">
+      <div data-reveal>
+        <p class="label">Reviews</p>
+        <h2 class="h2" id="reviews-titel" style="margin-top:1.25rem">Wat klanten <em>zeggen</em></h2>
+        <div class="big-score" style="margin-top:2.5rem">
+          <strong data-count="4.9" data-dec="1">4,9</strong>
+          <div>
+            <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <span>gemiddeld uit 1000+ reviews</span>
+          </div>
         </div>
       </div>
-      <div class="reviews-foot">
-        <p>Stand 25 oktober 2026.</p>
-        <a class="btn btn-outline" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener">Lees alle 1000+ reviews op Treatwell<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <div data-reveal style="--d:120ms">
+        <div class="score-list">
+          <a class="score-row" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><strong>4,9</strong><span><b>Treatwell</b><small>uit 1003 reviews</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="score-row" href="https://www.google.com/maps/search/?api=1&amp;query=4MEN%20Barbershop%20Goudsesingel%20101%20Rotterdam" rel="noopener"><strong>5,0</strong><span><b>Google</b><small>uit 275 reviews</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <p class="note">Stand 25 oktober 2026.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="team" aria-labelledby="team-titel">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="h2" id="team-titel">Het team</h2>
-        <p>Twee barbiers die hun vak leerden in Oekraïne en het nu uitoefenen in Rotterdam.</p>
-      </div>
-      <div class="team-grid">
-        <article class="member reveal">
-          <img src="img/team-ras.webp" width="482" height="602" loading="lazy" decoding="async" alt="Portret van Ras, oprichter van 4MEN Barbershop">
-          <h3>Ras</h3>
-          <p class="role">Oprichter en barbier</p>
-          <p>Ras is barbier sinds 2003 en begon zijn vak in Oekraïne. In 2016 opende hij met drie collega's een barbershop in Kyiv, en daarna de zaak in Rotterdam.</p>
-        </article>
-        <article class="member reveal">
-          <img src="img/team-andrew.webp" width="637" height="796" loading="lazy" decoding="async" alt="Portret van Andrew, barbier bij 4MEN Barbershop">
-          <h3>Andrew</h3>
-          <p class="role">Barbier</p>
-          <p>Andrew begon op zijn 21e als barbier. Hij werkte in Kyiv en Athene, en nu in Rotterdam.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="fotos" aria-labelledby="fotos-titel">
-    <div class="container">
-      <div class="section-head reveal">
+  <section class="section" id="fotos" aria-labelledby="fotos-titel" style="padding-top:0">
+    <div class="wrap">
+      <div class="gallery-head" data-reveal>
         <h2 class="h2" id="fotos-titel">Foto's</h2>
-        <p>Een kijkje in de zaak aan de Goudsesingel.</p>
+        <p class="lead">Een kijkje in de zaak. Tik op een foto om hem groter te zien.</p>
       </div>
-      <ul class="gallery reveal">
-        <li class="g-trim"><img src="img/foto-ras-baard.webp" width="506" height="337" loading="lazy" decoding="async" alt="Ras trimt met kam en tondeuse de baard van een klant bij 4MEN Barbershop"></li>
-        <li class="g-chair"><img src="img/foto-stoel.webp" width="222" height="314" loading="lazy" decoding="async" alt="Klassieke lichtblauwe barbierstoel voor een spiegel in 4MEN Barbershop"></li>
-        <li class="g-cut"><img src="img/foto-andrew-knipt.webp" width="176" height="314" loading="lazy" decoding="async" alt="Andrew knipt het haar van een klant met schaar en kam"></li>
-        <li class="g-lounge"><img src="img/foto-wachtruimte.webp" width="506" height="350" loading="lazy" decoding="async" alt="Wachtruimte met gestreepte fauteuils, een grote wandklok en een rode vitrinekast"></li>
-        <li class="g-fade"><img src="img/foto-fade.webp" width="235" height="314" loading="lazy" decoding="async" alt="Fade-kapsel met strakke overgang bij 4MEN Barbershop in Rotterdam"></li>
+      <ul class="gallery" data-reveal>
+        <li class="g-trim"><button type="button" data-zoom><img src="img/foto-ras-baard.webp" width="506" height="337" loading="lazy" decoding="async" alt="Ras trimt met kam en tondeuse de baard van een klant bij 4MEN Barbershop"></button></li>
+        <li class="g-chair"><button type="button" data-zoom><img src="img/foto-stoel.webp" width="222" height="314" loading="lazy" decoding="async" alt="Klassieke lichtblauwe barbierstoel voor een spiegel in 4MEN Barbershop"></button></li>
+        <li class="g-cut"><button type="button" data-zoom><img src="img/foto-andrew-knipt.webp" width="176" height="314" loading="lazy" decoding="async" alt="Andrew knipt het haar van een klant met schaar en kam"></button></li>
+        <li class="g-lounge"><button type="button" data-zoom><img src="img/foto-wachtruimte.webp" width="506" height="350" loading="lazy" decoding="async" alt="Wachtruimte met gestreepte fauteuils, een grote wandklok en een rode vitrinekast"></button></li>
+        <li class="g-fade"><button type="button" data-zoom><img src="img/foto-fade.webp" width="235" height="314" loading="lazy" decoding="async" alt="Fade-kapsel met strakke overgang bij 4MEN Barbershop in Rotterdam"></button></li>
       </ul>
     </div>
+    <dialog class="lightbox" data-lightbox aria-label="Foto vergroot">
+      <button class="close" type="button" data-close aria-label="Sluiten">×</button>
+      <img src="" alt="" data-lightbox-img>
+      <p data-lightbox-cap></p>
+    </dialog>
   </section>
 
   <section class="section visit" id="bezoek" aria-labelledby="bezoek-titel">
-    <div class="container visit-grid">
-      <div class="reveal">
-        <h2 class="h2" id="bezoek-titel">Bezoek ons</h2>
+    <div class="wrap visit-grid">
+      <div data-reveal>
+        <p class="label">Bezoek ons</p>
+        <h2 class="h2" id="bezoek-titel" style="margin-top:1.25rem">Aan de <em>Goudsesingel</em></h2>
         <address class="address">4MEN Barbershop<br>Goudsesingel 101<br>3031 EE Rotterdam</address>
         <table class="hours">
           <caption>Openingstijden</caption>
@@ -527,15 +672,15 @@ a:hover { color: var(--color-accent-hover); }
             <tr data-day="0"><th scope="row">Zondag</th><td>09:00–20:00</td></tr>
           </tbody>
         </table>
-        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Goudsesingel%20101%2C%203031%20EE%20Rotterdam" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Route plannen</a>
+        <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&amp;destination=Goudsesingel%20101%2C%203031%20EE%20Rotterdam" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Route plannen</span></a>
       </div>
-      <div class="map" data-map>
+      <div class="map" data-map data-reveal style="--d:120ms">
         <div class="map-card">
           <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
           <p>Goudsesingel 101<br>3031 EE Rotterdam</p>
           <div class="map-actions">
-            <button class="btn btn-primary" type="button" data-map-load>Kaart laden</button>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=4MEN%20Barbershop%2C%20Goudsesingel%20101%2C%203031%20EE%20Rotterdam" rel="noopener">Open in Google Maps</a>
+            <button class="btn btn-gold" type="button" data-map-load><span>Kaart laden</span></button>
+            <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=4MEN%20Barbershop%2C%20Goudsesingel%20101%2C%203031%20EE%20Rotterdam" rel="noopener"><span>Open in Google Maps</span></a>
           </div>
           <small>De kaart komt van Google Maps en laadt pas als je op de knop drukt.</small>
         </div>
@@ -543,23 +688,23 @@ a:hover { color: var(--color-accent-hover); }
     </div>
   </section>
 
-  <section class="section contact" id="contact" aria-labelledby="contact-titel">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="h2" id="contact-titel">Contact</h2>
-        <p>Vraag over een behandeling of liever direct een afspraak? Bel, app of mail ons.</p>
+  <section class="section" id="contact" aria-labelledby="contact-titel">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="label">Contact</p>
+        <h2 class="h2" id="contact-titel" style="margin-top:1.25rem">Bel, app <em>of mail</em></h2>
       </div>
-      <div class="contact-grid reveal">
-        <a class="contact-btn primary" href="tel:+31103140840"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span><b>Bellen</b><small>010 314 0840</small></span></a>
-        <a class="contact-btn" href="https://wa.me/31648351081" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span><b>WhatsApp</b><small>+31 6 48351081</small></span></a>
-        <a class="contact-btn" href="https://www.instagram.com/4men.barbershop.nl/" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-insta"/></svg><span><b>Instagram</b><small>@4men.barbershop.nl</small></span></a>
-        <a class="contact-btn" href="mailto:4men.barbershop.nl@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span><b>E-mail</b><small>4men.barbershop.nl@gmail.com</small></span></a>
+      <div class="contact-grid" data-reveal style="--d:120ms">
+        <a class="contact-btn" href="tel:+31103140840"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span><b>Bellen</b><small>010 314 0840</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="contact-btn" href="https://wa.me/31648351081" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span><b>WhatsApp</b><small>+31 6 48351081</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="contact-btn" href="https://www.instagram.com/4men.barbershop.nl/" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-insta"/></svg><span><b>Instagram</b><small>@4men.barbershop.nl</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="contact-btn" href="mailto:4men.barbershop.nl@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span><b>E-mail</b><small>4men.barbershop.nl@gmail.com</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </section>
 
   <section class="jobs" id="werken" aria-labelledby="werken-titel">
-    <div class="container">
+    <div class="wrap">
       <h2 id="werken-titel">Werken bij 4MEN</h2>
       <p>Ervaren barbier? <a href="https://wa.me/31648351081" rel="noopener">App ons je cv.</a></p>
     </div>
@@ -567,11 +712,11 @@ a:hover { color: var(--color-accent-hover); }
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="wrap">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <b>4MEN</b>
-        <p>Barbershop in Rotterdam, vakmanschap sinds 2003.</p>
+      <div>
+        <p class="footer-cta">Tot snel aan de Goudsesingel.</p>
+        <a class="btn btn-gold" href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><span>Boek je knipbeurt</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <address class="nap">
         <strong>4MEN Barbershop</strong>
@@ -586,57 +731,120 @@ a:hover { color: var(--color-accent-hover); }
       <a href="#top">Terug naar boven</a>
     </div>
   </div>
+  <p class="footer-word" aria-hidden="true">4MEN</p>
 </footer>
+
+<nav class="mbar" data-mbar aria-label="Snel contact">
+  <a href="https://www.treatwell.nl/salon/4men-barbershop/" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-cal"/></svg>Boek nu</a>
+  <a href="tel:+31103140840"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Bel</a>
+  <a href="https://wa.me/31648351081" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>App</a>
+</nav>
 
 <script>
 (function () {
-  document.documentElement.classList.add("js");
+  var doc = document.documentElement;
+  doc.classList.add("js");
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
 
   // Open or closed right now, in Rotterdam time
-  var parts = {};
   try {
+    var parts = {};
     new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
       .formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
-  } catch (e) { parts = {}; }
-  var day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(parts.weekday);
-  if (day > -1) {
-    var mins = +parts.hour * 60 + +parts.minute;
-    var close = day >= 1 && day <= 4 ? 19 : 20;
-    var open = mins >= 540 && mins < close * 60;
-    var el = document.querySelector("[data-status]");
-    el.dataset.open = open;
-    el.textContent = open ? "Nu open, vandaag tot " + close + ":00"
-      : mins < 540 ? "Nu gesloten, vandaag open vanaf 09:00"
-      : "Nu gesloten, morgen open vanaf 09:00";
-    var row = document.querySelector('tr[data-day="' + day + '"]');
-    if (row) row.classList.add("today");
+    var day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(parts.weekday);
+    if (day > -1) {
+      var mins = +parts.hour * 60 + +parts.minute, close = day >= 1 && day <= 4 ? 19 : 20;
+      var open = mins >= 540 && mins < close * 60, st = $("[data-status]");
+      st.dataset.open = open;
+      st.textContent = open ? "Nu open, vandaag tot " + close + ":00" : mins < 540 ? "Nu gesloten, vandaag open vanaf 09:00" : "Nu gesloten, morgen open vanaf 09:00";
+      var row = $('tr[data-day="' + day + '"]');
+      if (row) row.classList.add("today");
+    }
+  } catch (e) {}
+  $("[data-year]").textContent = new Date().getFullYear();
+
+  // Header, mobile bar, hero parallax, timeline progress
+  var header = $("[data-header]"), mbar = $("[data-mbar]"), bg = $("[data-parallax]"), tl = $("[data-timeline]"), ticking = false;
+  function onScroll() {
+    var y = window.scrollY, vh = window.innerHeight;
+    header.classList.toggle("is-solid", y > 40);
+    mbar.classList.toggle("is-on", y > vh * 0.6);
+    if (!reduce && bg && y < vh * 1.2) bg.style.transform = "translate3d(0," + (y * 0.25) + "px,0)";
+    if (tl) {
+      var r = tl.getBoundingClientRect(), p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.3)));
+      tl.style.setProperty("--p", reduce ? 1 : p.toFixed(3));
+      $$(".step").forEach(function (s, i) { s.classList.toggle("is-on", reduce || p > i / 3 + 0.05); });
+    }
+    ticking = false;
   }
-  document.querySelector("[data-year]").textContent = new Date().getFullYear();
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // Price list: each service shows its photo
+  var caption = $("[data-photo-caption]");
+  $$(".menu a").forEach(function (a) {
+    function show() {
+      $$(".menu a").forEach(function (o) { o.classList.toggle("is-active", o === a); });
+      $$("[data-photo]").forEach(function (img) { img.classList.toggle("is-active", img.dataset.photo === a.dataset.show); });
+      caption.textContent = a.querySelector("h3").textContent;
+    }
+    a.addEventListener("mouseenter", show);
+    a.addEventListener("focus", show);
+  });
+
+  // Lightbox
+  var box = $("[data-lightbox]");
+  if (box && typeof box.showModal === "function") {
+    $$("[data-zoom]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var img = b.querySelector("img");
+        $("[data-lightbox-img]").src = img.src;
+        $("[data-lightbox-img]").alt = img.alt;
+        $("[data-lightbox-cap]").textContent = img.alt;
+        box.showModal();
+      });
+    });
+    $("[data-close]").addEventListener("click", function () { box.close(); });
+    box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
+  }
 
   // Google Maps loads only on request
-  var mapBtn = document.querySelector("[data-map-load]");
+  var mapBtn = $("[data-map-load]");
   if (mapBtn) mapBtn.addEventListener("click", function () {
     var f = document.createElement("iframe");
     f.title = "Kaart: 4MEN Barbershop, Goudsesingel 101 in Rotterdam";
     f.src = "https://maps.google.com/maps?q=Goudsesingel%20101%2C%203031%20EE%20Rotterdam&z=16&output=embed";
-    f.loading = "lazy";
     f.referrerPolicy = "no-referrer-when-downgrade";
     f.allowFullscreen = true;
-    document.querySelector("[data-map]").appendChild(f);
+    $("[data-map]").appendChild(f);
     mapBtn.closest(".map-card").hidden = true;
   });
 
-  // Section entrances, once
-  if (!("IntersectionObserver" in window)) {
-    document.querySelectorAll(".reveal").forEach(function (n) { n.classList.add("in"); });
-    return;
+  // Count-up numbers
+  function countUp(el) {
+    var to = parseFloat(el.dataset.count), dec = +el.dataset.dec, from = to > 100 ? to - 23 : 0, t0 = null;
+    function frame(t) {
+      if (!t0) t0 = t;
+      var k = Math.min(1, (t - t0) / 1400), v = from + (to - from) * (1 - Math.pow(1 - k, 3));
+      el.textContent = v.toFixed(dec).replace(".", ",");
+      if (k < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
   }
+
+  // Entrances, once
+  if (!("IntersectionObserver" in window)) { $$("[data-reveal]").forEach(function (n) { n.classList.add("in"); }); return; }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      if (!reduce) Array.prototype.forEach.call(e.target.querySelectorAll("[data-count]"), countUp);
+      io.unobserve(e.target);
     });
-  }, { rootMargin: "0px 0px -8% 0px" });
-  document.querySelectorAll(".reveal").forEach(function (n) { io.observe(n); });
+  }, { rootMargin: "0px 0px -10% 0px" });
+  $$("[data-reveal]").forEach(function (n) { io.observe(n); });
 })();
 </script>
 </body>
